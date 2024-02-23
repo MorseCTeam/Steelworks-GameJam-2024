@@ -10,7 +10,7 @@ public class RobotController : MonoBehaviour
     public bool IsBusy { get; private set; } = false;
 
     [SerializeField] private float oneTileMovementLength = 0.25f;
-
+    
     public void Move(int amountOfTiles)
     {
         if(IsBusy)
@@ -23,7 +23,8 @@ public class RobotController : MonoBehaviour
         transform
             .DOMove(transform.position + (Vector3)DirectionToVector(CurrentDirection) * amountOfTiles,
                 oneTileMovementLength * amountOfTiles)
-            .OnComplete(() => { IsBusy = false; });
+            .OnComplete(() => { IsBusy = false; })
+            .SetEase(Ease.Linear);
     }
 
     public void Rotate(Direction direction)
