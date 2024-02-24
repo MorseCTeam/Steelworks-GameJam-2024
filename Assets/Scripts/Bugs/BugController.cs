@@ -13,12 +13,7 @@ public class BugController : MonoBehaviour
 
     private void Start()
     {
-        
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.B)) Move();
+        SetIndicatorAndFindPosition();        
     }
 
     public void Move()
