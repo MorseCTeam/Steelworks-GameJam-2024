@@ -27,6 +27,7 @@ public class AudioController : MonoBehaviour
         createdSource.loop = loop;
         
         createdSource.Play();
+        Destroy(createdSource.gameObject, createdSource.clip.length);
         
         return createdSource;
     }
@@ -41,5 +42,6 @@ public class Sound
 
 public enum SoundType
 {
-    ComputerBuzz
+    ComputerBuzz,
+    KeyBoardBeep
 }

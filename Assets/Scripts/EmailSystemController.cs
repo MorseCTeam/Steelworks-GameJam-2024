@@ -13,10 +13,12 @@ public class EmailSystemController : MonoBehaviour
 
     [SerializeField] private EmailData EmailTest; 
     private EmailData _currentEmail = null;
+    private AudioController audioController;
 
     private void Start()
     {
         TryToDisplayEmail(EmailTest);
+        audioController = FindObjectOfType<AudioController>();
     }
 
     public bool TryToDisplayEmail(EmailData emailData)
@@ -55,6 +57,9 @@ public class EmailSystemController : MonoBehaviour
                 + _currentEmail.EmailText.Substring(i);
             
             i++;
+
+            audioController.Play(SoundType.KeyBoardBeep);
+            
             if(searchForEndOfTag)
             {
                 continue;
