@@ -1,0 +1,41 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "Library_Map.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "Library_Map.tmx": {
+            "scale": 1,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 25.5,
+                "y": -73.5
+            }
+        },
+        "Library_Tiles.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1,
+            "scaleInEditor": 8
+        }
+    },
+    "last.imagePath": "C:/Users/Milos/Desktop/Steelworks-GameJam-2024/Assets/Sprites/Tiled",
+    "map.fixedSize": false,
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "openFiles": [
+        "Library_Tiles.tsx",
+        "Library_Map.tmx"
+    ],
+    "project": "LibraryProject.tiled-project",
+    "recentFiles": [
+        "Library_Tiles.tsx",
+        "Library_Map.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.type": 1
+}
