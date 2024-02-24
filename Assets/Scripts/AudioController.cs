@@ -11,7 +11,7 @@ public class AudioController : MonoBehaviour
     public AudioSource Play(SoundType type, float volume = 1, bool loop = false)
     {
         var foundSound = sounds.FirstOrDefault(sound => sound.Type == type);
-        if (foundSound.Clip == null || foundSound.Clip.Length == 0)
+        if (foundSound?.Clip == null || foundSound.Clip.Length == 0)
         {
             throw new ArgumentException("Could not find audioclip with given type");
         }
@@ -26,6 +26,9 @@ public class AudioController : MonoBehaviour
         createdSource.pitch = Random.Range(0.95f, 1.05f);
         createdSource.loop = loop;
         
+        createdSource.Play();
+        Destroy(createdSource.gameObject, createdSource.clip.length);
+        
         return createdSource;
     }
 }
@@ -39,5 +42,6 @@ public class Sound
 
 public enum SoundType
 {
-    ComputerBuzz
+    ComputerBuzz,
+    KeyBoardBeep
 }
