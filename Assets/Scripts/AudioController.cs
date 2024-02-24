@@ -25,7 +25,7 @@ public class AudioController : MonoBehaviour
         createdSource.volume = volume;
         createdSource.pitch = Random.Range(0.95f, 1.05f);
         createdSource.loop = loop;
-        
+        createdSource.Play();
         return createdSource;
     }
 }
