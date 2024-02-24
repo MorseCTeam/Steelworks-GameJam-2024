@@ -27,7 +27,7 @@ public class AudioController : MonoBehaviour
         createdSource.loop = loop;
         
         createdSource.Play();
-        Destroy(createdSource.gameObject, createdSource.clip.length);
+        if (!loop) Destroy(createdSource.gameObject, createdSource.clip.length);
         
         return createdSource;
     }
@@ -47,5 +47,7 @@ public enum SoundType
     RobotAttack,
     RobotMove,
     RobotRotate,
-    BatteryLoading
+    BatteryLoading,
+    ComputerStartup,
+    ButtonPress
 }

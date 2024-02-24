@@ -18,6 +18,8 @@ public class EmailSystemController : MonoBehaviour
     private void Start()
     {
         audioController = FindObjectOfType<AudioController>();
+        audioController?.Play(SoundType.ComputerStartup);
+        audioController?.Play(SoundType.ComputerBuzz, loop: true);
         TryToDisplayEmail(EmailTest);
     }
 

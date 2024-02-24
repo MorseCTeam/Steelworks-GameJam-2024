@@ -50,7 +50,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: fe324b2e631fc764da547b93363c93ce, type: 3}
   - <Type>k__BackingField: 1
     <Clip>k__BackingField:
-    - {fileID: 8300000, guid: 356f1a6c3448280458778c902446e609, type: 3}
+    - {fileID: 8300000, guid: 227356c9a2d981645bf068315ce47e21, type: 3}
   - <Type>k__BackingField: 2
     <Clip>k__BackingField:
     - {fileID: 8300000, guid: ff3665b4fc48bae49ac39b12cab21ccb, type: 3}
@@ -63,3 +63,6 @@ MonoBehaviour:
   - <Type>k__BackingField: 4
     <Clip>k__BackingField:
     - {fileID: 8300000, guid: 05cc7654763e8ba49baccb1969a512b7, type: 3}
+  - <Type>k__BackingField: 6
+    <Clip>k__BackingField:
+    - {fileID: 8300000, guid: 9b7982afec4a71041a690772e8230582, type: 3}
