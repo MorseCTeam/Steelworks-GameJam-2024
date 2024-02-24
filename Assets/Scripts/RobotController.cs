@@ -82,6 +82,18 @@ public class RobotController : MonoBehaviour
             _ => throw new ArgumentException("Illegal direction? How is that possible?")
         };
     }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if(col.gameObject.GetComponent<BugController>()) StartCoroutine(Death()); 
+    }
+
+    private IEnumerator Death()
+    {
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSeconds(1f);
+        FindObjectOfType<ScreenSpaceController>().ShutDown();
+    }
 }
 
 public enum Direction
