@@ -18,4 +18,10 @@ public class ScreenSpaceController : MonoBehaviour
         EmailScreen.SetActive(false);
         LibraryCameraScreen.SetActive(true);
     }
+
+    public void ShutDown()
+    {
+        EmailScreen.SetActive(false);
+        LibraryCameraScreen.SetActive(false);
+    }
 }

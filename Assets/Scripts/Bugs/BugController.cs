@@ -53,10 +53,10 @@ public class BugController : MonoBehaviour
 
         List<Vector2> possibleMoves = new List<Vector2>();
         
-        if(CanGo(upColliders)) possibleMoves.Add(Vector2.up);
-        if(CanGo(downColliders)) possibleMoves.Add(Vector2.down);
-        if(CanGo(rightColliders)) possibleMoves.Add(Vector2.right);
-        if(CanGo(leftColliders)) possibleMoves.Add(Vector2.left);
+       if(CanGo(upColliders)) possibleMoves.Add(Vector2.up);
+       if(CanGo(downColliders)) possibleMoves.Add(Vector2.down);
+       if(CanGo(rightColliders)) possibleMoves.Add(Vector2.right);
+       if(CanGo(leftColliders)) possibleMoves.Add(Vector2.left);
         
         if(possibleMoves.Count == 0) return Vector2.zero;
         return possibleMoves[Random.Range(0,possibleMoves.Count)];
