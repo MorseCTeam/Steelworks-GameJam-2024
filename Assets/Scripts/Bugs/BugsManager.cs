@@ -7,15 +7,23 @@ using UnityEngine;
 public class BugsManager : MonoBehaviour
 {
     public bool AreBugsMoving { get; private set; }
-    private List<BugController> bugsControllers;
+    private List<BugController> bugsControllers = new();
     [SerializeField] private GameObject bugPrefab;
-    private void Update()
+
+    private void Awake()
     {
-        if(Input.GetKeyDown(KeyCode.Space)){MoveBugs();}
+        bugsControllers.AddRange(FindObjectsOfType<BugController>());
     }
 
     public void MoveBugs()
     {
+        if(AreBugsMoving) return;
+        StartCoroutine(MoveBugsCoroutine());
+    }
+
+    private IEnumerator MoveBugsCoroutine()
+    {
+        AreBugsMoving = true;
         bugsControllers = bugsControllers
             .Where(bug => bug != null)
             .ToList();
@@ -24,5 +32,8 @@ public class BugsManager : MonoBehaviour
         {
             bug.Move();
         }
+
+        yield return new WaitForSeconds(0.55f);
+        AreBugsMoving = false;
     }
 }

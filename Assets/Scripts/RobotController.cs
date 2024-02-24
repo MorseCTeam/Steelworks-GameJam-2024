@@ -7,14 +7,15 @@ public class RobotController : MonoBehaviour
     public Direction CurrentDirection { get; private set; } = Direction.Up;
     public bool IsBusy { get; private set; } = false;
 
-    [SerializeField] private float oneTileMovementLength = 0.25f;
+    [SerializeField] private float oneTileMovementLength = 0.15f;
 
+    private BugsManager _bugsManager;
     private Rigidbody2D _rigidbody;
-
     private int testingTilesAmount;
 
     private void Start()
     {
+        _bugsManager = FindObjectOfType<BugsManager>();
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
@@ -31,11 +32,9 @@ public class RobotController : MonoBehaviour
 
     public void Move(int amountOfTiles)
     {
-        if (IsBusy)
-        {
-            Debug.LogWarning("Tried to use robot method while robot was busy.");
-            return;
-        }
+        if (IsBusy) return;
+        if (_bugsManager.AreBugsMoving) return;
+
 
         IsBusy = true;
         SnapBackToGrid();
@@ -50,21 +49,20 @@ public class RobotController : MonoBehaviour
         _rigidbody.velocity = Vector2.zero;
         SnapBackToGrid();
         IsBusy = false;
+        _bugsManager.MoveBugs();
     }
 
     public void Rotate(Direction direction)
     {
-        if (IsBusy)
-        {
-            Debug.LogWarning("Tried to use robot method while robot was busy.");
-            return;
-        }
+        if (IsBusy) return;
+        if (_bugsManager.AreBugsMoving) return;
 
         IsBusy = true;
 
         CurrentDirection = direction;
 
         IsBusy = false;
+        _bugsManager.MoveBugs();
     }
 
     private void SnapBackToGrid()
