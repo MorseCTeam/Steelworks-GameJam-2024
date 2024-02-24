@@ -17,8 +17,8 @@ public class EmailSystemController : MonoBehaviour
 
     private void Start()
     {
-        TryToDisplayEmail(EmailTest);
         audioController = FindObjectOfType<AudioController>();
+        TryToDisplayEmail(EmailTest);
     }
 
     public bool TryToDisplayEmail(EmailData emailData)
@@ -57,18 +57,17 @@ public class EmailSystemController : MonoBehaviour
                 + _currentEmail.EmailText.Substring(i);
             
             i++;
-
-            audioController.Play(SoundType.KeyBoardBeep);
-            
             if(searchForEndOfTag)
             {
                 continue;
             }
+            if(Char.IsLetterOrDigit(_currentEmail.EmailText[i-1])) audioController.Play(SoundType.KeyBoardBeep,volume:0.1f);
             
             yield return new WaitForSeconds(_currentEmail.LetterLength);
         }
         emailDisplay.text = _currentEmail.EmailText;
 
+        yield return new WaitForSeconds(_currentEmail.EndWait);
         _currentEmail.EndEmailAction.Invoke();
         _currentEmail = null;
     }
@@ -82,4 +81,5 @@ public class EmailData
     [field: SerializeField] public UnityEvent EndEmailAction { get; private set; }
     [field: SerializeField, TextArea] public string EmailText { get; set; }
     [field: SerializeField] public float LetterLength { get;  set; }
+    [field: SerializeField] public float EndWait { get; set; }
 }
