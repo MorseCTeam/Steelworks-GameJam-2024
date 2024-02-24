@@ -43,5 +43,9 @@ public class Sound
 public enum SoundType
 {
     ComputerBuzz,
-    KeyBoardBeep
+    KeyBoardBeep,
+    RobotAttack,
+    RobotMove,
+    RobotRotate,
+    BatteryLoading
 }
