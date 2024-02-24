@@ -8,11 +8,10 @@ public class FaderController : MonoBehaviour
 {
     [SerializeField] private Image fadeImage;
 
-    private void Update()
+    private void Start()
     {
-        if (Input.GetKeyDown(KeyCode.I)) StartCoroutine(Fade(FadeType.FadeIn, OnEndAction: () => Debug.Log("Start " + Random.Range(0, 5))));
-        if (Input.GetKeyDown(KeyCode.O)) StartCoroutine(Fade(FadeType.FadeOut, OnEndAction: () => Debug.Log("End " + Random.Range(0, 5))));
-
+        StartCoroutine(Fade(FadeType.FadeIn));
+        
     }
 
     IEnumerator Fade(FadeType type, float length = 1f, Action OnEndAction = null)
