@@ -11,7 +11,7 @@ public class AudioController : MonoBehaviour
     public AudioSource Play(SoundType type, float volume = 1, bool loop = false)
     {
         var foundSound = sounds.FirstOrDefault(sound => sound.Type == type);
-        if (foundSound.Clip == null || foundSound.Clip.Length == 0)
+        if (foundSound?.Clip == null || foundSound.Clip.Length == 0)
         {
             throw new ArgumentException("Could not find audioclip with given type");
         }
