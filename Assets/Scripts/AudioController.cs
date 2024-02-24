@@ -27,6 +27,7 @@ public class AudioController : MonoBehaviour
         createdSource.loop = loop;
         
         createdSource.Play();
+        
         if (!loop) Destroy(createdSource.gameObject, createdSource.clip.length);
         
         return createdSource;
