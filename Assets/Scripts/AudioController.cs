@@ -8,7 +8,7 @@ public class AudioController : MonoBehaviour
 {
     [SerializeField] private List<Sound> sounds;
 
-    AudioSource Play(SoundType type, float volume = 1, bool loop = false)
+    public AudioSource Play(SoundType type, float volume = 1, bool loop = false)
     {
         var foundSound = sounds.FirstOrDefault(sound => sound.Type == type);
         if (foundSound.Clip == null || foundSound.Clip.Length == 0)
