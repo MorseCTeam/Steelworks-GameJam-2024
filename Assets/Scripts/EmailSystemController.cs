@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Text;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -30,26 +31,43 @@ public class EmailSystemController : MonoBehaviour
     private IEnumerator DisplayCurrentEmail()
     {
         _currentEmail.StartEmailAction.Invoke();
-        _currentEmail.EmailText = _currentEmail.EmailText.Replace("\\n", "\u000a");
         emailDisplay.text = "";
         string tag = "<color=#00000000>";
         int i = 0;
-
+        bool searchForEndOfTag = false;
+        
         while (i < _currentEmail.EmailText.Length)
         {
+            if (_currentEmail.EmailText[i] == '<')
+            {
+                searchForEndOfTag = true;
+            }
+
+            if (i > 0 && _currentEmail.EmailText[i-1] == '>')
+            {
+                searchForEndOfTag = false;
+            }
+            
+
             emailDisplay.text =
                 _currentEmail.EmailText.Substring(0, i)
                 + tag
                 + _currentEmail.EmailText.Substring(i);
-
-            yield return new WaitForSeconds(_currentEmail.LetterLength);
+            
             i++;
+            if(searchForEndOfTag)
+            {
+                continue;
+            }
+            
+            yield return new WaitForSeconds(_currentEmail.LetterLength);
         }
         emailDisplay.text = _currentEmail.EmailText;
 
         _currentEmail.EndEmailAction.Invoke();
         _currentEmail = null;
     }
+
 }
 
 [Serializable]
@@ -57,6 +75,6 @@ public class EmailData
 {
     [field: SerializeField] public UnityEvent StartEmailAction { get; private set; }
     [field: SerializeField] public UnityEvent EndEmailAction { get; private set; }
-    [field: SerializeField] public string EmailText { get; set; }
-    [field: SerializeField] public float LetterLength { get; private set; }
+    [field: SerializeField, TextArea] public string EmailText { get; set; }
+    [field: SerializeField] public float LetterLength { get;  set; }
 }
