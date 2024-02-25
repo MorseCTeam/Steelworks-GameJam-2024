@@ -24,6 +24,9 @@ public class RobotController : MonoBehaviour
     private bool _isDead;
     private AudioController _audioController;
 
+    private bool firstMove = true;
+    private EmailSender emailSender;
+
     private void Awake()
     {
         _animator = GetComponent<Animator>();
@@ -36,6 +39,7 @@ public class RobotController : MonoBehaviour
         _buttonsAdapter.OnTurnPerformed += direction => Rotate((Direction)direction);
 
         _audioController = FindObjectOfType<AudioController>();
+        emailSender = FindObjectOfType<EmailSender>();
     }
 
     private void Start()
@@ -64,6 +68,7 @@ public class RobotController : MonoBehaviour
         if (IsBusy) return;
         if (_bugsManager.AreBugsMoving) return;
         if (_screenSpaceController.CurrentScreenSpace != ScreenSpace.Camera) return;
+        
         IsBusy = true;
         _batteryLife -= amountOfTiles * 5;
         SnapBackToGrid();
@@ -99,6 +104,7 @@ public class RobotController : MonoBehaviour
         _rigidbody.velocity = Vector2.zero;
         _animator.SetBool("Walk", false);
         Destroy(audioObject);
+        
         SnapBackToGrid();
         IsBusy = false;
         _bugsManager.MoveBugs();
