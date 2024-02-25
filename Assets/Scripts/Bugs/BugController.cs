@@ -7,7 +7,7 @@ public class BugController : MonoBehaviour
 {
     [SerializeField] private Transform bugNextTileIndicator;
     private Vector2 NextMovementDirection;
-
+    
     private void Start()
     {
         SetIndicatorAndFindPosition();
@@ -74,7 +74,12 @@ public class BugController : MonoBehaviour
 
     public void Death()
     {
-        Destroy(gameObject);
+        FindObjectOfType<BugsManager>().MarkRoachKilled();
+        GetComponent<Animator>().SetTrigger("Death");
+        Destroy(gameObject,5f);
+        bugNextTileIndicator.gameObject.SetActive(false);
+        DestroyImmediate(GetComponent<Collider>());
+        DestroyImmediate(this);
     }
     
 }
