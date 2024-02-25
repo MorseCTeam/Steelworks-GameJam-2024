@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class BugsManager : MonoBehaviour
 {
@@ -37,6 +38,27 @@ public class BugsManager : MonoBehaviour
 
         yield return new WaitForSeconds(0.55f);
         AreBugsMoving = false;
+        TryToSpawnNewBugs();
+    }
+
+    private void TryToSpawnNewBugs()
+    {
+        var controllers = FindObjectsOfType<SpawnerController>();
+        foreach (var controller in controllers)
+        {
+            if(controller.RoachesKillToEnable > AmountOfKilledRoaches) continue;
+            if (bugsControllers.Count == 0)
+            {
+                bugsControllers.Add(controller.Spawn());
+            }
+            else
+            {
+                if (Random.value <= 0.05)
+                {
+                   bugsControllers.Add(controller.Spawn());
+                }
+            }
+        }
     }
 
     public void MarkRoachKilled()

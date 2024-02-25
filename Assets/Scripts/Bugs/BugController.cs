@@ -6,7 +6,7 @@ using UnityEngine;
 public class BugController : MonoBehaviour
 {
     [SerializeField] private Transform bugNextTileIndicator;
-    [SerializeField] private float agressiveFactor = 0.4f;
+    public float agressiveFactor = 0.4f;
     private Vector2 NextMovementDirection;
     private void Start()
     {
@@ -89,7 +89,7 @@ public class BugController : MonoBehaviour
         GetComponent<Animator>().SetTrigger("Death");
         Destroy(gameObject,5f);
         bugNextTileIndicator.gameObject.SetActive(false);
-        DestroyImmediate(GetComponent<Collider>());
+        DestroyImmediate(GetComponent<Collider2D>());
         DestroyImmediate(this);
     }
     
