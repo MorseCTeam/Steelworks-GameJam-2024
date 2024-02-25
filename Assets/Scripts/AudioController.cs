@@ -53,4 +53,5 @@ public enum SoundType
     ButtonPress,
     OnOffSwitchClick,
     ValveSqueak,
+    DeathSound
 }
