@@ -52,4 +52,5 @@ public enum SoundType
     ComputerStartup,
     ButtonPress,
     OnOffSwitchClick,
+    ValveSqueak,
 }

@@ -22,6 +22,7 @@ public class RobotController : MonoBehaviour
     private Animator _animator;
     private int testingTilesAmount;
     private bool _isDead;
+    private AudioController _audioController;
 
     private void Awake()
     {
@@ -33,6 +34,8 @@ public class RobotController : MonoBehaviour
         _buttonsAdapter.OnMovePerformed += Move;
         _buttonsAdapter.ValvePressed += PullValve;
         _buttonsAdapter.OnTurnPerformed += direction => Rotate((Direction)direction);
+
+        _audioController = FindObjectOfType<AudioController>();
     }
 
     private void Start()
@@ -73,6 +76,7 @@ public class RobotController : MonoBehaviour
         if (_bugsManager.AreBugsMoving) return;
         if (_screenSpaceController.CurrentScreenSpace != ScreenSpace.Camera) return;
 
+        _audioController.Play(SoundType.ValveSqueak, volume: 0.2f);
 
         IsBusy = true;
         valveTransform
@@ -90,10 +94,11 @@ public class RobotController : MonoBehaviour
     {
         _rigidbody.velocity = DirectionToVector(CurrentDirection) / oneTileMovementLength;
         _animator.SetBool("Walk", true);
+        GameObject audioObject = _audioController.Play(SoundType.RobotMove, loop: true).gameObject;
         yield return new WaitForSeconds(amountOfTiles * oneTileMovementLength);
         _rigidbody.velocity = Vector2.zero;
         _animator.SetBool("Walk", false);
-
+        Destroy(audioObject);
         SnapBackToGrid();
         IsBusy = false;
         _bugsManager.MoveBugs();
@@ -114,6 +119,8 @@ public class RobotController : MonoBehaviour
         if (CurrentDirection == Direction.Left) GetComponent<SpriteRenderer>().flipX = true;
         else GetComponent<SpriteRenderer>().flipX = false;
 
+        _audioController.Play(SoundType.RobotRotate);
+
         IsBusy = false;
         _bugsManager.MoveBugs();
     }
@@ -132,7 +139,9 @@ public class RobotController : MonoBehaviour
             {
                 bugController.Death();
             }
-        }        
+        }
+
+        _audioController.Play(SoundType.RobotAttack, volume:0.35f);
         
         IsBusy = false;
         _bugsManager.MoveBugs();

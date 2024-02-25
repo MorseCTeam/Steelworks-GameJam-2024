@@ -21,7 +21,7 @@ public class PowerButtonController : MonoBehaviour
    {
       if (_turnedOn == false)
       {
-         FindObjectOfType<AudioController>().Play(SoundType.ComputerStartup); 
+         FindObjectOfType<AudioController>().Play(SoundType.ComputerStartup, volume: 0.4f); 
          buzzObject = FindObjectOfType<AudioController>().Play(SoundType.ComputerBuzz, loop: true).gameObject;
          FindObjectOfType<EmailSender>().PerformStartingEmail();
          FindObjectOfType<ScreenSpaceController>().OpenEmail();
@@ -33,6 +33,7 @@ public class PowerButtonController : MonoBehaviour
       {
          Destroy(buzzObject);
          _image.sprite = turnedOffSprite;
+         FindObjectOfType<AudioController>().Play(SoundType.OnOffSwitchClick);
          FindObjectOfType<ScreenSpaceController>().TurnOff();
          StartCoroutine(FindObjectOfType<FaderController>().Fade(FadeType.FadeOut, 2f, () =>
          {

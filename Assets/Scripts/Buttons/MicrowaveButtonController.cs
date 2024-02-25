@@ -12,11 +12,13 @@ public class MicrowaveButtonController : MonoBehaviour, IPointerEnterHandler, IP
     [SerializeField] private Sprite clickedSprite;
     private Image image;
     private Sprite unClickedSprite;
+    private AudioController _audioController;
 
     private void Awake()
     {
         image = GetComponent<Image>();
         unClickedSprite = image.sprite;
+        _audioController = FindObjectOfType<AudioController>();
     }
 
     private void Update()
@@ -50,6 +52,8 @@ public class MicrowaveButtonController : MonoBehaviour, IPointerEnterHandler, IP
         if (_isClicked) return;
 
         if (clickedSprite != null) image.sprite = clickedSprite;
+
+        _audioController.Play(SoundType.ButtonPress, volume: 0.25f);
 
         _isClicked = true;
         ClickAdditionalEvent?.Invoke();
