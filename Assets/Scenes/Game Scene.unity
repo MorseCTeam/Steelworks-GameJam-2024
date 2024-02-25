@@ -3294,7 +3294,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  clickedSprite: {fileID: -1655288995, guid: 248b4ed5bad4f83409de425412171631, type: 3}
+  clickedSprite: {fileID: 21300000, guid: 994a88afaa4d95d45b5c15270c3e8fc6, type: 3}
 --- !u!1 &1853044214
 GameObject:
   m_ObjectHideFlags: 0
