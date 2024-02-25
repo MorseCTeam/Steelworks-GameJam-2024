@@ -40,15 +40,16 @@ public class ScreenSpaceController : MonoBehaviour
 
     public void TurnOff()
     {
-        foreach (var audioSource in FindObjectsOfType<AudioSource>())
-        {
-            Destroy(audioSource.gameObject);
-        }
+       
         EmailScreen.SetActive(false);
         LibraryCameraScreen.SetActive(false);
         ShutDownScreen.SetActive(false);
         TurnedOffScreen.SetActive(true);
         CurrentScreenSpace = ScreenSpace.None;
+        foreach (var audioSource in FindObjectsOfType<AudioSource>())
+        {
+            Destroy(audioSource.gameObject);
+        }
     }
 }
 

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -180,6 +181,8 @@ public class RobotController : MonoBehaviour
 
     private IEnumerator Death()
     {
+        if (_isDead) yield break;
+
         _isDead = true;
         GetComponent<Animator>().SetTrigger("Death");
         yield return new WaitForSeconds(.5f);
