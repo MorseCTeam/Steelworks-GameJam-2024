@@ -21,9 +21,10 @@ public class EmailSender : MonoBehaviour
         FindObjectOfType<BugsManager>().OnBugKilled += HandleMails;
     }
 
-    private void sendFirstEmail()
+    IEnumerator firstMailHandle()
     {
-        
+        yield return new WaitForSeconds(3f);
+        SendFirstBugAppearanceEmail();
     }
 
     public void PerformStartingEmail()
@@ -98,7 +99,7 @@ public class EmailSender : MonoBehaviour
         
             FindObjectOfType<ButtonsToRobotAdapterController>().OnMovePerformed
                 -= InstructionPerformanceListener;
-            FindObjectOfType<ScreenSpaceController>().OpenLibraryCameraScreen();
         
+            SendFirstBugAppearanceEmail();
     }
 }

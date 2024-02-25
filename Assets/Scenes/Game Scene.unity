@@ -849,17 +849,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7697647890313839948, guid: c9d2315331e2bd2449c770f8d3106deb, type: 3}
   m_PrefabInstance: {fileID: 752857976}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &950484796 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2792786164672704235, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-  m_PrefabInstance: {fileID: 988406163520450942}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3ea62f2a8d0ac74c9666c9c8d10bc3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &954517741
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1133,6 +1122,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8100038359020470169, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
   m_PrefabInstance: {fileID: 988406163520450942}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1483310161 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1630610030255909916, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
+  m_PrefabInstance: {fileID: 988406163520450942}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae68b2e2557a882469084535123eeef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1501465837
 GameObject:
   m_ObjectHideFlags: 0
@@ -1410,6 +1410,243 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!1 &1865559511
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865559513}
+  - component: {fileID: 1865559512}
+  - component: {fileID: 1865559514}
+  m_Layer: 5
+  m_Name: EmailSender
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1865559512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865559511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3ea62f2a8d0ac74c9666c9c8d10bc3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingEmail:
+    <StartEmailAction>k__BackingField:
+      m_PersistentCalls:
+        m_Calls: []
+    <EndEmailAction>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1865559512}
+          m_TargetAssemblyTypeName: EmailSender, Assembly-CSharp
+          m_MethodName: SendInstructionEmail
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    <EmailText>k__BackingField: "Szanowny Panie K.\r\n\r\nWraz z kierownictwem Odnowionej
+      Biblioteki G\u0142\xF3wnej AGH niezmiernie cieszymy si\u0119, \u017Ce postanowi\u0142
+      Pan zatrudni\u0107 w naszym przybytku. W tych czasach taka odwaga to na prawd\u0119
+      rzadka cecha. Zgodnie z informacjami zawartymi w og\u0142oszeniu Pa\u0144skie
+      zadanie polega\u0142o b\u0119dzie na patrolowaniu terenu biblioteki. W zwi\u0105zku
+      z niedawnym, zupe\u0142nie niepowi\u0105zanym z Pa\u0144skim zatrudnieniem
+      incydentem, prac\u0119 b\u0119dzie Pan wykonywa\u0142 w trybie hybrydowym.
+      Za pomoc\u0105 zdalnie sterowanego robota z w\u0142asnego biura! Wi\u0119cej
+      informacji w nast\u0119pnym mailu!\r\n\r\n\u017Byczymy powodzenia\r\nzarz\u0105d
+      O.B.G. AGH"
+    <LetterLength>k__BackingField: 0.05
+    <EndWait>k__BackingField: 2.5
+  instructionEmail:
+    <StartEmailAction>k__BackingField:
+      m_PersistentCalls:
+        m_Calls: []
+    <EndEmailAction>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1865559512}
+          m_TargetAssemblyTypeName: EmailSender, Assembly-CSharp
+          m_MethodName: WaitForInstructionPerform
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    <EmailText>k__BackingField: "<size=150%>INSTRUKCJA OBS\u0141UGI ROBOTA</size>\r\n\r\nRobot
+      posiada 3 mo\u017Cliwe tryby. Tryb MOVE uruchamia konsol\u0119 numeryczn\u0105
+      i pozwala na wyb\xF3r ilo\u015Bci p\xF3l do przej\u015Bcia. Tryb ROTATE uruchamia
+      konsol\u0119 kierunkow\u0105 i pozwala na wyb\xF3r kierunku robota. Tryb ATTACK
+      sprawia, \u017Ce robot parali\u017Cuje pr\u0105dem obszar znajduj\u0105cy si\u0119
+      na metr przed nim. Robot zasilany jest moto-pomop\u0105 bombow\u0105 i do prawid\u0142owego
+      dzia\u0142ania potrzebuje odpowiedniej ilo\u015Bci pr\u0105du. Baterie robota
+      mo\u017Cna \u0142adowa\u0107 za pomoc\u0105 korby znajduj\u0105cej si\u0119
+      przy stanowisku operatora\r\n\r\nAby zamkn\u0105\u0107 instrukcj\u0119 operator
+      powinien wybra\u0107 opcj\u0119 MOVE oraz wcisn\u0105\u0107 przycisk 9"
+    <LetterLength>k__BackingField: 0.05
+    <EndWait>k__BackingField: 0
+  firstBugAppearanceEmail:
+    <StartEmailAction>k__BackingField:
+      m_PersistentCalls:
+        m_Calls: []
+    <EndEmailAction>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1483310161}
+          m_TargetAssemblyTypeName: ScreenSpaceController, Assembly-CSharp
+          m_MethodName: OpenLibraryCameraScreen
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    <EmailText>k__BackingField: "Szanowny Panie K.\r\n\r\nZ autoryzowane \u017Ar\xF3d\u0142a
+      dop\u0142yn\u0119\u0142y do nas informacje, \u017Ce teren biblioteki nawiedzi\u0142a
+      plaga mechatronicznych karaluch\xF3w. Zaznaczam, \u017Ce obrona mienia bilbioteki
+      wszystkimi dost\u0119pnymi \u015Brodkami jest pana obowi\u0105zkiem, jako nadzorca
+      g\u0142\xF3wny!\r\n\r\nPomy\u015Blnych \u0142ow\xF3w\r\nzarz\u0105d O.B.G.
+      AGH"
+    <LetterLength>k__BackingField: 0.05
+    <EndWait>k__BackingField: 3
+  firstBugKillEmail:
+    <StartEmailAction>k__BackingField:
+      m_PersistentCalls:
+        m_Calls: []
+    <EndEmailAction>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1483310161}
+          m_TargetAssemblyTypeName: ScreenSpaceController, Assembly-CSharp
+          m_MethodName: OpenLibraryCameraScreen
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    <EmailText>k__BackingField: "Szanowny Panie K.\r\n\r\nDobra robota, \u015Bwietnie
+      Pan sobie poradzi\u0142 z pierwszym szkodnikiem. Niestety nasza satelita zarejestrowa\u0142a
+      wzmo\u017Con\u0105 aktywno\u015Bc byt\xF3w karaluszych na terenie biblioteki.
+      Pragn\u0119 Panu przypomnie\u0107, \u017Ce zasoby kt\xF3rych Pan pilnuje s\u0105
+      niezwykle drogocenne, a odpowiedzialnos\u0107 za ich zniszenie, nawet je\u017Celi
+      zrobi to karaluch ponosi Pan.\r\n\r\nZ powa\u017Caniem\r\nzarz\u0105d O.B.G.
+      AGH"
+    <LetterLength>k__BackingField: 0.05
+    <EndWait>k__BackingField: 3
+  fifthBugKillEmail:
+    <StartEmailAction>k__BackingField:
+      m_PersistentCalls:
+        m_Calls: []
+    <EndEmailAction>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1483310161}
+          m_TargetAssemblyTypeName: ScreenSpaceController, Assembly-CSharp
+          m_MethodName: OpenLibraryCameraScreen
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    <EmailText>k__BackingField: "Szanowny Panie K.\r\nNaszej uwadze nie uchodzi to,
+      \u017Ce jest Pan w swoim \u017Cywiole, a karalusza populacja w rejonie nie
+      spada. Co wi\u0119cej, podejrzewamy, \u017Ce w najbli\u017Cszym czasie mo\u017Ce
+      si\u0119 znacznie powi\u0119kszy\u0107. Aby nie zostawia\u0107 Pana na lodzie,
+      wysy\u0142amy specjalnie sformowan\u0105 jednostk\u0119 owadob\xF3jcz\u0105.
+      \r\nNiniejsza wiadomo\u015B\u0107 zobowi\u0105zuje pana do przetrwania.\r\nPomy\u015Blnych
+      wiatr\xF3w\r\nzarz\u0105d O.B.G. AGH"
+    <LetterLength>k__BackingField: 0.05
+    <EndWait>k__BackingField: 3
+  dwudziesztykaraluchpadwiadomosc:
+    <StartEmailAction>k__BackingField:
+      m_PersistentCalls:
+        m_Calls: []
+    <EndEmailAction>k__BackingField:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1483310161}
+          m_TargetAssemblyTypeName: ScreenSpaceController, Assembly-CSharp
+          m_MethodName: OpenLibraryCameraScreen
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    <EmailText>k__BackingField: "Szanowny Panie K.\r\nPonownie piszemy w sprawie
+      odsieczy. Wiadomo\u015Bci s\u0105 dwie, dobra i z\u0142a. Wys\u0142ali\u015Bmy
+      jeszcze jedn\u0105 ekip\u0119 pomocnicz\u0105. Niestety, podzieli\u0142a ona
+      los ekipy poprzedniej. Konkretnie przesta\u0142a istnie\u0107. Dodatkowo, w
+      mi\u0119dzyczasie dosz\u0142o do minimalnej zmiany na szczeblu zarz\u0105du.
+      W wyniku najnowszego rozporz\u0105dzenia traci pan prace w trybie natychmiastowym,
+      obawiamy si\u0119 \u017Ce nie b\u0119dzie to jedyna rzecz jak\u0105 Pan straci
+      w najbli\u017Cszym czasie : )\r\nKaraluchy pod poduchy\r\nzarz\u0105d Neo-Karaluszej
+      Biblioteki Centralnej"
+    <LetterLength>k__BackingField: 0.04
+    <EndWait>k__BackingField: 3
+--- !u!224 &1865559513
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865559511}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 567.62756, y: 690.9271}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1865559514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865559511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f11726c42f892304284cb767070feddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emailDisplay: {fileID: 2118523494}
 --- !u!114 &1897595343 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7457935440020687008, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
@@ -1631,6 +1868,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: -2695619058785784247, guid: 5824ee5076e4dda469d9603f3fba307a, type: 3}
+--- !u!114 &2118523494 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 764052882713849239, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
+  m_PrefabInstance: {fileID: 988406163520450942}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &146291950038596875
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1719,7 +1967,7 @@ PrefabInstance:
     - target: {fileID: 2792786164672704235, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
       propertyPath: instructionEmail.<EndEmailAction>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 950484796}
+      objectReference: {fileID: 0}
     - target: {fileID: 2792786164672704235, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
       propertyPath: instructionEmail.<EndEmailAction>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -1872,7 +2120,9 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2792786164672704235, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
+    - {fileID: 2548516934295245638, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8100038359020470169, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
@@ -1957,3 +2207,4 @@ SceneRoots:
   - {fileID: 2087370517}
   - {fileID: 1438236961}
   - {fileID: 1645793749}
+  - {fileID: 1865559513}
