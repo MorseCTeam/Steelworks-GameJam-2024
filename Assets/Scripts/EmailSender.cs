@@ -15,7 +15,7 @@ public class EmailSender : MonoBehaviour
     private void Start()
     {
         _emailSystemController = FindObjectOfType<EmailSystemController>();
-        
+        FindObjectOfType<BugsManager>().OnBugKilled += HandleMails;
     }
 
     public void PerformStartingEmail()
@@ -56,6 +56,25 @@ public class EmailSender : MonoBehaviour
             yield return null;
         }
 
+        
+    }
+
+    public void HandleMails(int kills)
+    {
+        if (kills == 1)
+        {
+            SendFirstBugKillEmail();
+        }
+
+        if (kills == 5)
+        {
+            SendFifthBugKillEmail();
+        }
+
+        if (kills == 20)
+        {
+            WyslijWiadomoscPoDwudziesymKaraluchu();
+        }
         
     }
 
