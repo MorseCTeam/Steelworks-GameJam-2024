@@ -10,8 +10,7 @@ public class EmailSystemController : MonoBehaviour
     public bool IsBusy => _currentEmail != null;
 
     [SerializeField] private TextMeshProUGUI emailDisplay;
-
-    [SerializeField] private EmailData EmailTest; 
+    
     private EmailData _currentEmail = null;
     private AudioController audioController;
 
@@ -20,7 +19,6 @@ public class EmailSystemController : MonoBehaviour
         audioController = FindObjectOfType<AudioController>();
         audioController?.Play(SoundType.ComputerStartup);
         audioController?.Play(SoundType.ComputerBuzz, loop: true);
-        TryToDisplayEmail(EmailTest);
     }
 
     public bool TryToDisplayEmail(EmailData emailData)
