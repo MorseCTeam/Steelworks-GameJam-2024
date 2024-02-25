@@ -71,4 +71,10 @@ public class BugController : MonoBehaviour
             return false;
         }
     }
+
+    public void Death()
+    {
+        Destroy(gameObject);
+    }
+    
 }

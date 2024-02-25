@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -11,11 +10,11 @@ public class RobotController : MonoBehaviour
     public Direction CurrentDirection { get; private set; } = Direction.Up;
     public bool IsBusy { get; private set; } = false;
 
-    [SerializeField] private float oneTileMovementLength = 0.15f; 
+    [SerializeField] private float oneTileMovementLength = 0.15f;
     [SerializeField] private Transform valveTransform;
     [SerializeField] private Slider _batterySlider;
     private float _batteryLife = 100f;
-    
+
     private ButtonsToRobotAdapterController _buttonsAdapter;
     private ScreenSpaceController _screenSpaceController;
     private BugsManager _bugsManager;
@@ -23,16 +22,19 @@ public class RobotController : MonoBehaviour
     private Animator _animator;
     private int testingTilesAmount;
     private bool _isDead;
+
     private void Awake()
     {
         _animator = GetComponent<Animator>();
-        _animator.SetInteger("Direction",(int)CurrentDirection);
+        _animator.SetInteger("Direction", (int)CurrentDirection);
         _buttonsAdapter = FindObjectOfType<ButtonsToRobotAdapterController>();
         _screenSpaceController = FindObjectOfType<ScreenSpaceController>();
+        _buttonsAdapter.OnAttackPerformed += Attack;
         _buttonsAdapter.OnMovePerformed += Move;
         _buttonsAdapter.ValvePressed += PullValve;
         _buttonsAdapter.OnTurnPerformed += direction => Rotate((Direction)direction);
     }
+
     private void Start()
     {
         _bugsManager = FindObjectOfType<BugsManager>();
@@ -58,7 +60,7 @@ public class RobotController : MonoBehaviour
     {
         if (IsBusy) return;
         if (_bugsManager.AreBugsMoving) return;
-        if(_screenSpaceController.CurrentScreenSpace != ScreenSpace.Camera) return;
+        if (_screenSpaceController.CurrentScreenSpace != ScreenSpace.Camera) return;
         IsBusy = true;
         _batteryLife -= amountOfTiles * 5;
         SnapBackToGrid();
@@ -69,12 +71,12 @@ public class RobotController : MonoBehaviour
     {
         if (IsBusy) return;
         if (_bugsManager.AreBugsMoving) return;
-        if(_screenSpaceController.CurrentScreenSpace != ScreenSpace.Camera) return;
+        if (_screenSpaceController.CurrentScreenSpace != ScreenSpace.Camera) return;
 
 
         IsBusy = true;
         valveTransform
-            .DOLocalRotate(valveTransform.eulerAngles + Vector3.forward * Random.Range(360f, 480f), Random.Range(0.7f, 0.9f),RotateMode.FastBeyond360)
+            .DOLocalRotate(valveTransform.eulerAngles + Vector3.forward * Random.Range(360f, 480f), Random.Range(0.7f, 0.9f), RotateMode.FastBeyond360)
             .SetEase(Ease.Linear)
             .OnComplete(() =>
             {
@@ -82,8 +84,8 @@ public class RobotController : MonoBehaviour
                 _bugsManager.MoveBugs();
             });
         _batteryLife += 50f;
-
     }
+
     public IEnumerator MovementCoroutine(int amountOfTiles)
     {
         _rigidbody.velocity = DirectionToVector(CurrentDirection) / oneTileMovementLength;
@@ -96,21 +98,42 @@ public class RobotController : MonoBehaviour
         IsBusy = false;
         _bugsManager.MoveBugs();
     }
+
     public void Rotate(Direction direction)
     {
         if (IsBusy) return;
         if (_bugsManager.AreBugsMoving) return;
-        if(_screenSpaceController.CurrentScreenSpace != ScreenSpace.Camera) return;
+        if (_screenSpaceController.CurrentScreenSpace != ScreenSpace.Camera) return;
 
         IsBusy = true;
         _batteryLife -= 10f;
         CurrentDirection = direction;
 
-        
-        _animator.SetInteger("Direction",(int)CurrentDirection);
+
+        _animator.SetInteger("Direction", (int)CurrentDirection);
         if (CurrentDirection == Direction.Left) GetComponent<SpriteRenderer>().flipX = true;
         else GetComponent<SpriteRenderer>().flipX = false;
 
+        IsBusy = false;
+        _bugsManager.MoveBugs();
+    }
+
+    public void Attack()
+    {
+        if (IsBusy) return;
+        if (_bugsManager.AreBugsMoving) return;
+        if (_screenSpaceController.CurrentScreenSpace != ScreenSpace.Camera) return;
+
+        var cols =Physics2D.OverlapBoxAll(transform.position + (Vector3)DirectionToVector(CurrentDirection), new Vector2(0.9f,0.9f),0);
+        foreach (var col in cols)
+        {
+            var bugController = col.GetComponent<BugController>();
+            if (col.GetComponent<BugController>() != null)
+            {
+                bugController.Death();
+            }
+        }        
+        
         IsBusy = false;
         _bugsManager.MoveBugs();
     }
@@ -121,6 +144,7 @@ public class RobotController : MonoBehaviour
             Mathf.RoundToInt(transform.position.y),
             Mathf.RoundToInt(transform.position.z));
     }
+
     public Vector2 DirectionToVector(Direction direction)
     {
         return direction switch
@@ -135,7 +159,7 @@ public class RobotController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.gameObject.GetComponent<BugController>()) StartCoroutine(Death()); 
+        if (col.gameObject.GetComponent<BugController>()) StartCoroutine(Death());
     }
 
     private IEnumerator Death()
@@ -148,7 +172,7 @@ public class RobotController : MonoBehaviour
 }
 
 public enum Direction
-{   
+{
     None,
     Up,
     Down,
