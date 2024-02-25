@@ -801,11 +801,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7697647890313839948, guid: c9d2315331e2bd2449c770f8d3106deb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7697647890313839948, guid: c9d2315331e2bd2449c770f8d3106deb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10
+      value: -18
       objectReference: {fileID: 0}
     - target: {fileID: 7697647890313839948, guid: c9d2315331e2bd2449c770f8d3106deb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1437,6 +1437,10 @@ PrefabInstance:
       propertyPath: valveTransform
       value: 
       objectReference: {fileID: 671133511}
+    - target: {fileID: 2249697336051702141, guid: da4f203b619468242b93a9c8b064af6a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 969832388, guid: 4c2d34f331926b74cbcfc2e6646961cd, type: 3}
     - target: {fileID: 5113969465872133176, guid: da4f203b619468242b93a9c8b064af6a, type: 3}
       propertyPath: m_Name
       value: Robot Prefab
