@@ -9,10 +9,12 @@ public class SpawnerController : MonoBehaviour
     public float agressionMax = 0.7f;
     public GameObject bugPrefab;
 
-    public void Spawn()
+    public BugController Spawn()
     {
-        Instantiate(bugPrefab, transform.position, Quaternion.identity)
-            .GetComponent<BugController>().agressiveFactor = Random.Range(agressionMin,agressionMax);
+        var bugController = Instantiate(bugPrefab, transform.position, Quaternion.identity)
+            .GetComponent<BugController>();
 
+        bugController.agressiveFactor = Random.Range(agressionMin, agressionMax);
+        return bugController;
     }
 }

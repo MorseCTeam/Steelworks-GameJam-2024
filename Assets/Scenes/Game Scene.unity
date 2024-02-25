@@ -648,10 +648,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: dziursko (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 1735479783689383162, guid: c9d2315331e2bd2449c770f8d3106deb, type: 3}
-      propertyPath: bugPrefab
-      value: 
-      objectReference: {fileID: 3880749718445642550}
+    - target: {fileID: 4053995872482875109, guid: c9d2315331e2bd2449c770f8d3106deb, type: 3}
+      propertyPath: m_Size.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053995872482875109, guid: c9d2315331e2bd2449c770f8d3106deb, type: 3}
+      propertyPath: m_Size.y
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 7697647890313839948, guid: c9d2315331e2bd2449c770f8d3106deb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4
@@ -787,10 +791,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: dziursko (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 1735479783689383162, guid: c9d2315331e2bd2449c770f8d3106deb, type: 3}
-      propertyPath: bugPrefab
-      value: 
-      objectReference: {fileID: 3880749718445642550}
+    - target: {fileID: 4053995872482875109, guid: c9d2315331e2bd2449c770f8d3106deb, type: 3}
+      propertyPath: m_Size.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053995872482875109, guid: c9d2315331e2bd2449c770f8d3106deb, type: 3}
+      propertyPath: m_Size.y
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 7697647890313839948, guid: c9d2315331e2bd2449c770f8d3106deb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9
@@ -864,10 +872,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: dziursko (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 1735479783689383162, guid: c9d2315331e2bd2449c770f8d3106deb, type: 3}
-      propertyPath: bugPrefab
-      value: 
-      objectReference: {fileID: 3880749718445642550}
+    - target: {fileID: 4053995872482875109, guid: c9d2315331e2bd2449c770f8d3106deb, type: 3}
+      propertyPath: m_Size.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053995872482875109, guid: c9d2315331e2bd2449c770f8d3106deb, type: 3}
+      propertyPath: m_Size.y
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 7697647890313839948, guid: c9d2315331e2bd2449c770f8d3106deb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9
@@ -1203,10 +1215,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: dziursko (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 1735479783689383162, guid: c9d2315331e2bd2449c770f8d3106deb, type: 3}
-      propertyPath: bugPrefab
-      value: 
-      objectReference: {fileID: 3880749718445642550}
+    - target: {fileID: 4053995872482875109, guid: c9d2315331e2bd2449c770f8d3106deb, type: 3}
+      propertyPath: m_Size.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053995872482875109, guid: c9d2315331e2bd2449c770f8d3106deb, type: 3}
+      propertyPath: m_Size.y
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 7697647890313839948, guid: c9d2315331e2bd2449c770f8d3106deb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5
@@ -1627,10 +1643,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: dziursko
       objectReference: {fileID: 0}
-    - target: {fileID: 1735479783689383162, guid: c9d2315331e2bd2449c770f8d3106deb, type: 3}
-      propertyPath: bugPrefab
-      value: 
-      objectReference: {fileID: 3880749718445642550}
+    - target: {fileID: 4053995872482875109, guid: c9d2315331e2bd2449c770f8d3106deb, type: 3}
+      propertyPath: m_Size.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053995872482875109, guid: c9d2315331e2bd2449c770f8d3106deb, type: 3}
+      propertyPath: m_Size.y
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 7697647890313839948, guid: c9d2315331e2bd2449c770f8d3106deb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8
@@ -1921,11 +1941,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 008f2efa47a70bd4597817808294ce9a, type: 3}
---- !u!1 &3880749718445642550 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1717409585895491731, guid: 008f2efa47a70bd4597817808294ce9a, type: 3}
-  m_PrefabInstance: {fileID: 3880749718445642549}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
