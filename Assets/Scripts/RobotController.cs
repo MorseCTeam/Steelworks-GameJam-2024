@@ -182,7 +182,12 @@ public class RobotController : MonoBehaviour
     {
         _isDead = true;
         GetComponent<Animator>().SetTrigger("Death");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.5f);
+        foreach (var audioSource in FindObjectsOfType<AudioSource>())
+        {
+            Destroy(audioSource.gameObject);
+        }
+        _audioController.Play(SoundType.DeathSound, loop: true);
         FindObjectOfType<ScreenSpaceController>().ShutDown();
     }
 }

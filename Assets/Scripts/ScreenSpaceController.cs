@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ScreenSpaceController : MonoBehaviour
@@ -39,6 +40,10 @@ public class ScreenSpaceController : MonoBehaviour
 
     public void TurnOff()
     {
+        foreach (var audioSource in FindObjectsOfType<AudioSource>())
+        {
+            Destroy(audioSource.gameObject);
+        }
         EmailScreen.SetActive(false);
         LibraryCameraScreen.SetActive(false);
         ShutDownScreen.SetActive(false);
