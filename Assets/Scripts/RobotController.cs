@@ -3,6 +3,7 @@ using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class RobotController : MonoBehaviour
@@ -12,16 +13,19 @@ public class RobotController : MonoBehaviour
 
     [SerializeField] private float oneTileMovementLength = 0.15f; 
     [SerializeField] private Transform valveTransform;
+    [SerializeField] private Slider _batterySlider;
     private float _batteryLife = 100f;
     
     private ButtonsToRobotAdapterController _buttonsAdapter;
+    private ScreenSpaceController _screenSpaceController;
     private BugsManager _bugsManager;
     private Rigidbody2D _rigidbody;
     private int testingTilesAmount;
-
+    private bool _isDead;
     private void Awake()
     {
         _buttonsAdapter = FindObjectOfType<ButtonsToRobotAdapterController>();
+        _screenSpaceController = FindObjectOfType<ScreenSpaceController>();
         _buttonsAdapter.OnMovePerformed += Move;
         _buttonsAdapter.ValvePressed += PullValve;
         _buttonsAdapter.OnTurnPerformed += direction => Rotate((Direction)direction);
@@ -34,15 +38,26 @@ public class RobotController : MonoBehaviour
 
     private void Update()
     {
+        if (!_isDead)
+        {
+            _batteryLife = Mathf.Clamp(_batteryLife, 0, 100);
+            _batterySlider.value = _batteryLife;
+        }
+
+        if (_batteryLife <= 0 && !_isDead)
+        {
+            IsBusy = true;
+            StartCoroutine(Death());
+        }
     }
 
     private void Move(int amountOfTiles)
     {
         if (IsBusy) return;
         if (_bugsManager.AreBugsMoving) return;
-
-        
+        if(_screenSpaceController.CurrentScreenSpace != ScreenSpace.Camera) return;
         IsBusy = true;
+        _batteryLife -= amountOfTiles * 5;
         SnapBackToGrid();
         StartCoroutine(MovementCoroutine(amountOfTiles));
     }
@@ -51,6 +66,8 @@ public class RobotController : MonoBehaviour
     {
         if (IsBusy) return;
         if (_bugsManager.AreBugsMoving) return;
+        if(_screenSpaceController.CurrentScreenSpace != ScreenSpace.Camera) return;
+
 
         IsBusy = true;
         valveTransform
@@ -78,9 +95,11 @@ public class RobotController : MonoBehaviour
     {
         if (IsBusy) return;
         if (_bugsManager.AreBugsMoving) return;
+        if(_screenSpaceController.CurrentScreenSpace != ScreenSpace.Camera) return;
 
         IsBusy = true;
 
+        _batteryLife -= 10f;
         CurrentDirection = direction;
 
         IsBusy = false;
@@ -112,6 +131,7 @@ public class RobotController : MonoBehaviour
 
     private IEnumerator Death()
     {
+        _isDead = true;
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         yield return new WaitForSeconds(1f);
         FindObjectOfType<ScreenSpaceController>().ShutDown();

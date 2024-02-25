@@ -920,6 +920,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 008f2efa47a70bd4597817808294ce9a, type: 3}
+--- !u!114 &1270022873 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7162531107273156071, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
+  m_PrefabInstance: {fileID: 988406163520450942}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1308374341 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7113305089959577028, guid: da4f203b619468242b93a9c8b064af6a, type: 3}
@@ -1300,6 +1311,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1847079610726279435, guid: da4f203b619468242b93a9c8b064af6a, type: 3}
+      propertyPath: _batterySlider
+      value: 
+      objectReference: {fileID: 1270022873}
+    - target: {fileID: 1847079610726279435, guid: da4f203b619468242b93a9c8b064af6a, type: 3}
       propertyPath: valveTransform
       value: 
       objectReference: {fileID: 671133511}
@@ -1509,6 +1524,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1630610030255909916, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
+      propertyPath: CurrentScreenSpace
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4243349316295203611, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1593,9 +1612,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Game Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 6193663440471684565, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
+    - target: {fileID: 8547632319738079777, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9038685368996936499, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9038685368996936499, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

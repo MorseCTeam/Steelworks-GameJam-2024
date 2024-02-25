@@ -37,6 +37,7 @@ public class EmailSystemController : MonoBehaviour
     private IEnumerator DisplayCurrentEmail()
     {
         if(audioController == null) audioController = FindObjectOfType<AudioController>();
+        FindObjectOfType<ScreenSpaceController>().OpenEmail();
         _currentEmail.StartEmailAction.Invoke();
         emailDisplay.text = "";
         string tag = "<color=#00000000>";
