@@ -49,7 +49,7 @@ public class BugsManager : MonoBehaviour
             if(controller.RoachesKillToEnable > AmountOfKilledRoaches) continue;
             if (bugsControllers.Count == 0)
             {
-                bugsControllers.Add(controller.Spawn());
+                bugsControllers.Add(controllers[Random.Range(0,controllers.Length)].Spawn());
             }
             else
             {
