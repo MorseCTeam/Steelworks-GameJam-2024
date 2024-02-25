@@ -511,7 +511,7 @@ Transform:
   m_GameObject: {fileID: 224844414}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.028567, y: 0.66061664, z: -0.061327934}
+  m_LocalPosition: {x: -2.2504487, y: 0.67660666, z: -0.061327934}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -790,6 +790,11 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 1ff6a97d8dad0a84c934ce27112755aa, type: 2}
+--- !u!224 &671133511 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6435185996228535313, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
+  m_PrefabInstance: {fileID: 988406163520450942}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &694845755
 GameObject:
   m_ObjectHideFlags: 0
@@ -915,20 +920,10 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 008f2efa47a70bd4597817808294ce9a, type: 3}
---- !u!1 &950484794 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1570396210153202711, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-  m_PrefabInstance: {fileID: 988406163520450942}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1308374341 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7113305089959577028, guid: da4f203b619468242b93a9c8b064af6a, type: 3}
   m_PrefabInstance: {fileID: 1934788978}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1414999054 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6193663440471684565, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-  m_PrefabInstance: {fileID: 988406163520450942}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1438236959
 GameObject:
@@ -1011,25 +1006,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1483310157 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7890057676789159592, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-  m_PrefabInstance: {fileID: 988406163520450942}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1483310159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1483310157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae68b2e2557a882469084535123eeef0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EmailScreen: {fileID: 950484794}
-  LibraryCameraScreen: {fileID: 1414999054}
 --- !u!1 &1501465837
 GameObject:
   m_ObjectHideFlags: 0
@@ -1323,6 +1299,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1847079610726279435, guid: da4f203b619468242b93a9c8b064af6a, type: 3}
+      propertyPath: valveTransform
+      value: 
+      objectReference: {fileID: 671133511}
     - target: {fileID: 5113969465872133176, guid: da4f203b619468242b93a9c8b064af6a, type: 3}
       propertyPath: m_Name
       value: Robot Prefab
@@ -1529,111 +1509,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2548516934295245638, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      propertyPath: EmailTest.<EndWait>k__BackingField
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2548516934295245638, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      propertyPath: EmailTest.<EmailText>k__BackingField
-      value: "Szanowny Panie K.\r\n\r\nWraz z kierownictwem Odnowionej Biblioteki
-        G\u0142\xF3wnej AGH niezmiernie cieszymy si\u0119, \u017Ce postanowi\u0142
-        Pan zatrudni\u0107 w naszym przybytku. W tych czasach taka odwaga to na prawd\u0119
-        rzadka cecha. Zgodnie z informacjami zawartymi w og\u0142oszeniu Pa\u0144skie
-        zadanie polega\u0142o b\u0119dzie na ochronie mienia biblioteki przed nieproszonymi
-        go\u015B\u0107mi. W zwi\u0105zku z niedawnym, zupe\u0142nie niepowi\u0105zanym
-        z Pa\u0144skim zatrudnieniem incydentem, prac\u0119 b\u0119dzie Pan wykonywa\u0142
-        w trybie hybrydowym. Za pomoc\u0105 zdalnie sterowanego robota z w\u0142asnego
-        biura! Wi\u0119cej informacji w nast\u0119pnym mailu!\r\n\r\n\u017Byczymy
-        powodzenia,\r\nzarz\u0105d O.B.G. AGH"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2548516934295245638, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      propertyPath: EmailTest.<EndEmailAction>k__BackingField.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2548516934295245638, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      propertyPath: EmailTest.<StartEmailAction>k__BackingField.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2548516934295245638, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      propertyPath: EmailTest.<EndEmailAction>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2548516934295245638, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      propertyPath: EmailTest.<EndEmailAction>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1483310159}
-    - target: {fileID: 2548516934295245638, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      propertyPath: EmailTest.<StartEmailAction>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2548516934295245638, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      propertyPath: EmailTest.<StartEmailAction>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1483310159}
-    - target: {fileID: 2548516934295245638, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      propertyPath: EmailTest.<EndEmailAction>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2548516934295245638, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      propertyPath: EmailTest.<EndEmailAction>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenLibraryCameraScreen
-      objectReference: {fileID: 0}
-    - target: {fileID: 2548516934295245638, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      propertyPath: EmailTest.<StartEmailAction>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2548516934295245638, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      propertyPath: EmailTest.<StartEmailAction>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenEmail
-      objectReference: {fileID: 0}
-    - target: {fileID: 2548516934295245638, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      propertyPath: EmailTest.<EndEmailAction>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ScreenSpaceController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2548516934295245638, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      propertyPath: EmailTest.<StartEmailAction>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ScreenSpaceController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2548516934295245638, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      propertyPath: EmailTest.<EndEmailAction>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2548516934295245638, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      propertyPath: EmailTest.<StartEmailAction>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 3533285829163042828, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3533285829163042828, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3533285829163042828, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3533285829163042828, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3533285829163042828, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3533285829163042828, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3533285829163042828, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3533285829163042828, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4243349316295203611, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1722,45 +1597,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8100038359020470169, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100038359020470169, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100038359020470169, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100038359020470169, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100038359020470169, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1060
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100038359020470169, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 690
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100038359020470169, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -392.37244
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100038359020470169, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 150.92712
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7890057676789159592, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1483310159}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb0e74ff542d8aa4cb5d8ca54481cd4b, type: 3}
 --- !u!1001 &3880749718445642549
 PrefabInstance:

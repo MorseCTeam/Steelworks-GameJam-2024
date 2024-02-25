@@ -12,7 +12,7 @@ public class ButtonsToRobotAdapterController : MonoBehaviour
     public event Action OnAttackPerformed;
     public event Action<int> OnMovePerformed;
     public event Action<DirectionButton> OnTurnPerformed;
-    
+    public event Action ValvePressed;
     public void PressActionButton(int actionButtonType)
     {
         CurrentActionButton = (ActionButton)actionButtonType;
@@ -35,6 +35,10 @@ public class ButtonsToRobotAdapterController : MonoBehaviour
         ClearData();
     }
 
+    public void PressValve()
+    {
+        ValvePressed?.Invoke();
+    }
     public void ClearData()
     {
         CurrentActionButton = ActionButton.None;

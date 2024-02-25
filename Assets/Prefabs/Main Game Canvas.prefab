@@ -111,6 +111,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4243349316295203611}
     m_Modifications:
+    - target: {fileID: 2585414155625628873, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5062901990995779399, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -198,8 +202,40 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6581178348129793654, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8844061205111621735}
   m_SourcePrefab: {fileID: 100100000, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
+--- !u!1 &1570396210153202711 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2585414155625628873, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
+  m_PrefabInstance: {fileID: 3902957803611365598}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6193663440471684565 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7196267753605125387, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
+  m_PrefabInstance: {fileID: 3902957803611365598}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7890057676789159592 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6581178348129793654, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
+  m_PrefabInstance: {fileID: 3902957803611365598}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8844061205111621735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7890057676789159592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae68b2e2557a882469084535123eeef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EmailScreen: {fileID: 1570396210153202711}
+  LibraryCameraScreen: {fileID: 6193663440471684565}
 --- !u!224 &8100038359020470169 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5062901990995779399, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
@@ -213,6 +249,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4243349316295203611}
     m_Modifications:
+    - target: {fileID: 4136079162878190518, guid: acb83c31b1277a947b368702d47d9625, type: 3}
+      propertyPath: m_Name
+      value: Korba Image
+      objectReference: {fileID: 0}
     - target: {fileID: 5235218886176179782, guid: acb83c31b1277a947b368702d47d9625, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -300,8 +340,56 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4136079162878190518, guid: acb83c31b1277a947b368702d47d9625, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5188777979792709843}
   m_SourcePrefab: {fileID: 100100000, guid: acb83c31b1277a947b368702d47d9625, type: 3}
+--- !u!1 &54899979662567361 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4136079162878190518, guid: acb83c31b1277a947b368702d47d9625, type: 3}
+  m_PrefabInstance: {fileID: 4153802270154769527}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5188777979792709843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54899979662567361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4242931434117887264}
+          m_TargetAssemblyTypeName: ButtonsToRobotAdapterController, Assembly-CSharp
+          m_MethodName: PressValve
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &4242931434117887264 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 235504949120086359, guid: acb83c31b1277a947b368702d47d9625, type: 3}
+  m_PrefabInstance: {fileID: 4153802270154769527}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7963f0dec62d04a4eaa1e6288da48e76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &8143210708918321713 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5235218886176179782, guid: acb83c31b1277a947b368702d47d9625, type: 3}

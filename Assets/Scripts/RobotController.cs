@@ -1,14 +1,19 @@
 using System;
 using System.Collections;
+using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Rendering;
+using Random = UnityEngine.Random;
 
 public class RobotController : MonoBehaviour
 {
     public Direction CurrentDirection { get; private set; } = Direction.Up;
     public bool IsBusy { get; private set; } = false;
 
-    [SerializeField] private float oneTileMovementLength = 0.15f;
-
+    [SerializeField] private float oneTileMovementLength = 0.15f; 
+    [SerializeField] private Transform valveTransform;
+    private float _batteryLife = 100f;
+    
     private ButtonsToRobotAdapterController _buttonsAdapter;
     private BugsManager _bugsManager;
     private Rigidbody2D _rigidbody;
@@ -18,6 +23,7 @@ public class RobotController : MonoBehaviour
     {
         _buttonsAdapter = FindObjectOfType<ButtonsToRobotAdapterController>();
         _buttonsAdapter.OnMovePerformed += Move;
+        _buttonsAdapter.ValvePressed += PullValve;
         _buttonsAdapter.OnTurnPerformed += direction => Rotate((Direction)direction);
     }
     private void Start()
@@ -41,6 +47,23 @@ public class RobotController : MonoBehaviour
         StartCoroutine(MovementCoroutine(amountOfTiles));
     }
 
+    private void PullValve()
+    {
+        if (IsBusy) return;
+        if (_bugsManager.AreBugsMoving) return;
+
+        IsBusy = true;
+        valveTransform
+            .DOLocalRotate(valveTransform.eulerAngles + Vector3.forward * Random.Range(360f, 480f), Random.Range(0.7f, 0.9f),RotateMode.FastBeyond360)
+            .SetEase(Ease.Linear)
+            .OnComplete(() =>
+            {
+                IsBusy = false;
+                _bugsManager.MoveBugs();
+            });
+        _batteryLife += 50f;
+
+    }
     public IEnumerator MovementCoroutine(int amountOfTiles)
     {
         _rigidbody.velocity = DirectionToVector(CurrentDirection) / oneTileMovementLength;
