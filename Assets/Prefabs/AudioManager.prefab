@@ -47,7 +47,7 @@ MonoBehaviour:
   sounds:
   - <Type>k__BackingField: 0
     <Clip>k__BackingField:
-    - {fileID: 8300000, guid: fe324b2e631fc764da547b93363c93ce, type: 3}
+    - {fileID: 8300000, guid: 47c342d171c563e4ca4d6b8be7a996ce, type: 3}
   - <Type>k__BackingField: 1
     <Clip>k__BackingField:
     - {fileID: 8300000, guid: 227356c9a2d981645bf068315ce47e21, type: 3}
@@ -66,3 +66,9 @@ MonoBehaviour:
   - <Type>k__BackingField: 6
     <Clip>k__BackingField:
     - {fileID: 8300000, guid: 9b7982afec4a71041a690772e8230582, type: 3}
+  - <Type>k__BackingField: 7
+    <Clip>k__BackingField:
+    - {fileID: 8300000, guid: 0b337fa27eb93624f93da2385c039c63, type: 3}
+  - <Type>k__BackingField: 8
+    <Clip>k__BackingField:
+    - {fileID: 8300000, guid: 894d26ea4925ca14f8f1a8eeb269863e, type: 3}

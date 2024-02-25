@@ -50,5 +50,6 @@ public enum SoundType
     RobotRotate,
     BatteryLoading,
     ComputerStartup,
-    ButtonPress
+    ButtonPress,
+    OnOffSwitchClick,
 }
