@@ -6,10 +6,11 @@ using UnityEngine;
 public class BugController : MonoBehaviour
 {
     [SerializeField] private Transform bugNextTileIndicator;
+    [SerializeField] private float agressiveFactor = 0.4f;
     private Vector2 NextMovementDirection;
-    
     private void Start()
     {
+        bugNextTileIndicator.SetParent(null);
         SetIndicatorAndFindPosition();
     }
 
@@ -24,7 +25,7 @@ public class BugController : MonoBehaviour
     public void SetIndicatorAndFindPosition()
     {
         NextMovementDirection = FindPossibleDirection();
-        bugNextTileIndicator.localPosition = NextMovementDirection;
+        bugNextTileIndicator.position = transform.position +(Vector3) NextMovementDirection;
 
         if (NextMovementDirection == Vector2.zero)
         {
@@ -32,6 +33,7 @@ public class BugController : MonoBehaviour
         }
         else
         {
+            transform.up = NextMovementDirection.normalized;
             bugNextTileIndicator.gameObject.SetActive(true);
         }
     }
@@ -55,7 +57,16 @@ public class BugController : MonoBehaviour
         if (CanGo(leftColliders)) possibleMoves.Add(Vector2.left);
 
         if (possibleMoves.Count == 0) return Vector2.zero;
-        return possibleMoves[Random.Range(0, possibleMoves.Count)];
+
+        if (Random.value <= agressiveFactor)
+        {
+            var robotController = FindObjectOfType<RobotController>();
+            return possibleMoves.OrderBy(move => Vector3.Distance(transform.position+(Vector3)move,robotController.transform.position)).First();
+        }
+        else
+        {
+            return possibleMoves[Random.Range(0, possibleMoves.Count)];
+        }
     }
 
     private bool CanGo(Collider2D[] colliders)
