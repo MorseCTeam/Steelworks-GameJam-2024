@@ -5,6 +5,10 @@ public class EmailSender : MonoBehaviour
 {
     [SerializeField] private EmailData startingEmail;
     [SerializeField] private EmailData instructionEmail;
+    [SerializeField] private EmailData firstBugAppearanceEmail;
+    [SerializeField] private EmailData firstBugKillEmail;
+    [SerializeField] private EmailData fifthBugKillEmail;
+    [SerializeField] private EmailData dwudziesztykaraluchpadwiadomosc;
 
     private EmailSystemController _emailSystemController;
 
@@ -22,6 +26,26 @@ public class EmailSender : MonoBehaviour
     public void SendInstructionEmail()
     {
         StartCoroutine(SendEmailUntilSuccess(instructionEmail));
+    }
+
+    public void SendFirstBugAppearanceEmail()
+    {
+        StartCoroutine(SendEmailUntilSuccess(firstBugAppearanceEmail));
+    }
+
+    public void SendFirstBugKillEmail()
+    {
+        StartCoroutine(SendEmailUntilSuccess(firstBugKillEmail));
+    }
+
+    public void SendFifthBugKillEmail()
+    {
+        StartCoroutine(SendEmailUntilSuccess(fifthBugKillEmail));
+    }
+
+    public void WyslijWiadomoscPoDwudziesymKaraluchu()
+    {
+        StartCoroutine(SendEmailUntilSuccess(dwudziesztykaraluchpadwiadomosc));
     }
 
     // ReSharper disable Unity.PerformanceAnalysis
