@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -11,11 +12,19 @@ public class EmailSender : MonoBehaviour
     [SerializeField] private EmailData dwudziesztykaraluchpadwiadomosc;
 
     private EmailSystemController _emailSystemController;
+    private float timer = 0;
+    private bool sendFirst = false;
 
     private void Start()
     {
         _emailSystemController = FindObjectOfType<EmailSystemController>();
         FindObjectOfType<BugsManager>().OnBugKilled += HandleMails;
+    }
+
+    IEnumerator firstMailHandle()
+    {
+        yield return new WaitForSeconds(3f);
+        SendFirstBugAppearanceEmail();
     }
 
     public void PerformStartingEmail()
@@ -90,7 +99,7 @@ public class EmailSender : MonoBehaviour
         
             FindObjectOfType<ButtonsToRobotAdapterController>().OnMovePerformed
                 -= InstructionPerformanceListener;
-            FindObjectOfType<ScreenSpaceController>().OpenLibraryCameraScreen();
         
+            SendFirstBugAppearanceEmail();
     }
 }
