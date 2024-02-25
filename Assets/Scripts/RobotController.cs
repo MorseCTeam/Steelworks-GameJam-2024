@@ -181,7 +181,7 @@ public class RobotController : MonoBehaviour
     private IEnumerator Death()
     {
         _isDead = true;
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<Animator>().SetTrigger("Death");
         yield return new WaitForSeconds(1f);
         FindObjectOfType<ScreenSpaceController>().ShutDown();
     }
