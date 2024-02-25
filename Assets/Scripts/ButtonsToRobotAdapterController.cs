@@ -23,7 +23,6 @@ public class ButtonsToRobotAdapterController : MonoBehaviour
     {
         if(CurrentActionButton != ActionButton.Move) return;
         
-        Debug.Log("Invoke: "+value);
         OnMovePerformed?.Invoke(value);
         ClearData();
     }

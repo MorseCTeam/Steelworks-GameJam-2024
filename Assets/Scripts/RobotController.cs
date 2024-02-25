@@ -32,10 +32,8 @@ public class RobotController : MonoBehaviour
 
     private void Move(int amountOfTiles)
     {
-        Debug.Log("1");
         if (IsBusy) return;
         if (_bugsManager.AreBugsMoving) return;
-        Debug.Log("2");
 
         
         IsBusy = true;
