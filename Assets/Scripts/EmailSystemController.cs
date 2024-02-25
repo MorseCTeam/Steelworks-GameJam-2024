@@ -21,7 +21,7 @@ public class EmailSystemController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) _currentEmail.LetterLength = 0;
+         if (Input.GetKeyDown(KeyCode.Space) && _currentEmail != null) _currentEmail.LetterLength = 0;
     }
 
     private void Start()

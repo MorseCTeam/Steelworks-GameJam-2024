@@ -6,8 +6,10 @@ using UnityEngine;
 
 public class BugsManager : MonoBehaviour
 {
+    public int AmountOfKilledRoaches;
     public bool AreBugsMoving { get; private set; }
     private List<BugController> bugsControllers = new();
+    public event Action<int> OnBugKilled;
     [SerializeField] private GameObject bugPrefab;
 
     private void Awake()
@@ -35,5 +37,11 @@ public class BugsManager : MonoBehaviour
 
         yield return new WaitForSeconds(0.55f);
         AreBugsMoving = false;
+    }
+
+    public void MarkRoachKilled()
+    {
+        AmountOfKilledRoaches++;
+        OnBugKilled?.Invoke(AmountOfKilledRoaches);
     }
 }
