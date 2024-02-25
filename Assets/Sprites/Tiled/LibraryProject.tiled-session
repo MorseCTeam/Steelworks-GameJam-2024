@@ -9,11 +9,11 @@
     ],
     "fileStates": {
         "Library_Map.tmx": {
-            "scale": 3,
+            "scale": 1.5,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": -490.49999999999994,
-                "y": -283.8333333333333
+                "x": -146.33333333333337,
+                "y": 137.66666666666663
             }
         },
         "Library_Tiles.tsx": {

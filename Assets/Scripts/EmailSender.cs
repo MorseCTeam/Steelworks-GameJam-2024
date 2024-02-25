@@ -5,13 +5,17 @@ public class EmailSender : MonoBehaviour
 {
     [SerializeField] private EmailData startingEmail;
     [SerializeField] private EmailData instructionEmail;
+    [SerializeField] private EmailData firstBugAppearanceEmail;
+    [SerializeField] private EmailData firstBugKillEmail;
+    [SerializeField] private EmailData fifthBugKillEmail;
+    [SerializeField] private EmailData dwudziesztykaraluchpadwiadomosc;
 
     private EmailSystemController _emailSystemController;
 
     private void Start()
     {
         _emailSystemController = FindObjectOfType<EmailSystemController>();
-        
+        FindObjectOfType<BugsManager>().OnBugKilled += HandleMails;
     }
 
     public void PerformStartingEmail()
@@ -24,6 +28,26 @@ public class EmailSender : MonoBehaviour
         StartCoroutine(SendEmailUntilSuccess(instructionEmail));
     }
 
+    public void SendFirstBugAppearanceEmail()
+    {
+        StartCoroutine(SendEmailUntilSuccess(firstBugAppearanceEmail));
+    }
+
+    public void SendFirstBugKillEmail()
+    {
+        StartCoroutine(SendEmailUntilSuccess(firstBugKillEmail));
+    }
+
+    public void SendFifthBugKillEmail()
+    {
+        StartCoroutine(SendEmailUntilSuccess(fifthBugKillEmail));
+    }
+
+    public void WyslijWiadomoscPoDwudziesymKaraluchu()
+    {
+        StartCoroutine(SendEmailUntilSuccess(dwudziesztykaraluchpadwiadomosc));
+    }
+
     // ReSharper disable Unity.PerformanceAnalysis
     private IEnumerator SendEmailUntilSuccess(EmailData emailData)
     {
@@ -32,6 +56,25 @@ public class EmailSender : MonoBehaviour
             yield return null;
         }
 
+        
+    }
+
+    public void HandleMails(int kills)
+    {
+        if (kills == 1)
+        {
+            SendFirstBugKillEmail();
+        }
+
+        if (kills == 5)
+        {
+            SendFifthBugKillEmail();
+        }
+
+        if (kills == 20)
+        {
+            WyslijWiadomoscPoDwudziesymKaraluchu();
+        }
         
     }
 

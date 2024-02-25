@@ -131,6 +131,9 @@ public class RobotController : MonoBehaviour
         if (_bugsManager.AreBugsMoving) return;
         if (_screenSpaceController.CurrentScreenSpace != ScreenSpace.Camera) return;
 
+        _batteryLife -= 7.5f;
+        _audioController.Play(SoundType.RobotAttack, volume:0.35f);
+
         var cols =Physics2D.OverlapBoxAll(transform.position + (Vector3)DirectionToVector(CurrentDirection), new Vector2(0.9f,0.9f),0);
         foreach (var col in cols)
         {
@@ -140,8 +143,6 @@ public class RobotController : MonoBehaviour
                 bugController.Death();
             }
         }
-
-        _audioController.Play(SoundType.RobotAttack, volume:0.35f);
         
         IsBusy = false;
         _bugsManager.MoveBugs();

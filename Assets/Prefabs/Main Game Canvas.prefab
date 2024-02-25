@@ -135,6 +135,107 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &2907683346565173490
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8131427306891060124}
+  - component: {fileID: 5282961933600723387}
+  - component: {fileID: 6004318346657496460}
+  - component: {fileID: 1527046768628383910}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8131427306891060124
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2907683346565173490}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8100038359020470169}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!223 &5282961933600723387
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2907683346565173490}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!114 &6004318346657496460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2907683346565173490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!114 &1527046768628383910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2907683346565173490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &4851212427705204263
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,7 +443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 2
+  - eventID: 4
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -553,6 +654,121 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4243349316295203611}
     m_Modifications:
+    - target: {fileID: 1219331224693706293, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
+      propertyPath: startingEmail.<EmailText>k__BackingField
+      value: "Szanowny Panie K.\r\n\r\nWraz z kierownictwem Odnowionej Biblioteki
+        G\u0142\xF3wnej AGH niezmiernie cieszymy si\u0119, \u017Ce postanowi\u0142
+        Pan zatrudni\u0107 w naszym przybytku. W tych czasach taka odwaga to na prawd\u0119
+        rzadka cecha. Zgodnie z informacjami zawartymi w og\u0142oszeniu Pa\u0144skie
+        zadanie polega\u0142o b\u0119dzie na patrolowaniu terenu biblioteki. W zwi\u0105zku
+        z niedawnym, zupe\u0142nie niepowi\u0105zanym z Pa\u0144skim zatrudnieniem
+        incydentem, prac\u0119 b\u0119dzie Pan wykonywa\u0142 w trybie hybrydowym.
+        Za pomoc\u0105 zdalnie sterowanego robota z w\u0142asnego biura! Wi\u0119cej
+        informacji w nast\u0119pnym mailu!\r\n\r\n\u017Byczymy powodzenia\r\nzarz\u0105d
+        O.B.G. AGH"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219331224693706293, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
+      propertyPath: instructionEmail.<EndWait>k__BackingField
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219331224693706293, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
+      propertyPath: fifthBugKillEmail.<EndWait>k__BackingField
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219331224693706293, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
+      propertyPath: firstBugKillEmail.<EndWait>k__BackingField
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219331224693706293, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
+      propertyPath: fifthBugKillEmail.<EmailText>k__BackingField
+      value: "Szanowny Panie K.\r\nNaszej uwadze nie uchodzi to, \u017Ce jest Pan
+        w swoim \u017Cywiole, a karalusza populacja w rejonie nie spada. Co wi\u0119cej,
+        podejrzewamy, \u017Ce w najbli\u017Cszym czasie mo\u017Ce si\u0119 znacznie
+        powi\u0119kszy\u0107. Aby nie zostawia\u0107 Pana na lodzie, wysy\u0142amy
+        specjalnie sformowan\u0105 jednostk\u0119 owadob\xF3jcz\u0105. \r\nNiniejsza
+        wiadomo\u015B\u0107 zobowi\u0105zuje pana do przetrwania.\r\nPomy\u015Blnych
+        wiatr\xF3w\r\nzarz\u0105d O.B.G. AGH"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219331224693706293, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
+      propertyPath: firstBugKillEmail.<EmailText>k__BackingField
+      value: "Szanowny Panie K.\r\n\r\nDobra robota, \u015Bwietnie Pan sobie poradzi\u0142
+        z pierwszym szkodnikiem. Niestety nasza satelita zarejestrowa\u0142a wzmo\u017Con\u0105
+        aktywno\u015Bc byt\xF3w karaluszych na terenie biblioteki. Pragn\u0119 Panu
+        przypomnie\u0107, \u017Ce zasoby kt\xF3rych Pan pilnuje s\u0105 niezwykle
+        drogocenne, a odpowiedzialnos\u0107 za ich zniszenie, nawet je\u017Celi zrobi
+        to karaluch ponosi Pan.\r\n\r\nZ powa\u017Caniem\r\nzarz\u0105d O.B.G. AGH"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219331224693706293, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
+      propertyPath: fifthBugKillEmail.<LetterLength>k__BackingField
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219331224693706293, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
+      propertyPath: firstBugKillEmail.<LetterLength>k__BackingField
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219331224693706293, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
+      propertyPath: firstBugAppearanceEmail.<EndWait>k__BackingField
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219331224693706293, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
+      propertyPath: firstBugAppearanceEmail.<EmailText>k__BackingField
+      value: "Szanowny Panie K.\r\n\r\nZ autoryzowane \u017Ar\xF3d\u0142a dop\u0142yn\u0119\u0142y
+        do nas informacje, \u017Ce teren biblioteki nawiedzi\u0142a plaga mechatronicznych
+        karaluch\xF3w. Zaznaczam, \u017Ce obrona mienia bilbioteki wszystkimi dost\u0119pnymi
+        \u015Brodkami jest pana obowi\u0105zkiem, jako nadzorca g\u0142\xF3wny!\r\n\r\nPomy\u015Blnych
+        \u0142ow\xF3w\r\nzarz\u0105d O.B.G. AGH"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219331224693706293, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
+      propertyPath: firstBugAppearanceEmail.<LetterLength>k__BackingField
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219331224693706293, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
+      propertyPath: dwudziesztykaraluchpadwiadomosc.<EndWait>k__BackingField
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219331224693706293, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
+      propertyPath: dwudziesztykaraluchpadwiadomosc.<EmailText>k__BackingField
+      value: "Szanowny Panie K.\r\nPonownie piszemy w sprawie odsieczy. Wiadomo\u015Bci
+        s\u0105 dwie, dobra i z\u0142a. Wys\u0142ali\u015Bmy jeszcze jedn\u0105 ekip\u0119
+        pomocnicz\u0105. Niestety, podzieli\u0142a ona los ekipy poprzedniej. Konkretnie
+        przesta\u0142a istnie\u0107. Dodatkowo, w mi\u0119dzyczasie dosz\u0142o do
+        minimalnej zmiany na szczeblu zarz\u0105du. W wyniku najnowszego rozporz\u0105dzenia
+        traci pan prace w trybie natychmiastowym, obawiamy si\u0119 \u017Ce nie b\u0119dzie
+        to jedyna rzecz jak\u0105 Pan straci w najbli\u017Cszym czasie : )\r\nKaraluchy
+        pod poduchy\r\nzarz\u0105d Neo-Karaluszej Biblioteki Centralnej"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219331224693706293, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
+      propertyPath: dwudziesztykaraluchpadwiadomosc.<LetterLength>k__BackingField
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219331224693706293, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
+      propertyPath: instructionEmail.<EndEmailAction>k__BackingField.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219331224693706293, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
+      propertyPath: instructionEmail.<EndEmailAction>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219331224693706293, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
+      propertyPath: instructionEmail.<EndEmailAction>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2792786164672704235}
+    - target: {fileID: 1219331224693706293, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
+      propertyPath: instructionEmail.<EndEmailAction>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219331224693706293, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
+      propertyPath: instructionEmail.<EndEmailAction>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: WaitForInstructionPerform
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219331224693706293, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
+      propertyPath: instructionEmail.<EndEmailAction>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EmailSender, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219331224693706293, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
+      propertyPath: instructionEmail.<EndEmailAction>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2344968440962321602, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
       propertyPath: ShutDownScreen
       value: 
@@ -669,6 +885,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5062901990995779399, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 8131427306891060124}
+    - targetCorrespondingSourceObject: {fileID: 5062901990995779399, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
       insertIndex: -1
       addedObject: {fileID: 645550546993130643}
     - targetCorrespondingSourceObject: {fileID: 5062901990995779399, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
@@ -676,6 +895,17 @@ PrefabInstance:
       addedObject: {fileID: 3218024686445532573}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
+--- !u!114 &2792786164672704235 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1219331224693706293, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
+  m_PrefabInstance: {fileID: 3902957803611365598}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3ea62f2a8d0ac74c9666c9c8d10bc3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &8100038359020470169 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5062901990995779399, guid: 9d5f30074a4544e47a9c52cd41439503, type: 3}
@@ -696,6 +926,10 @@ PrefabInstance:
     - target: {fileID: 435519365077333894, guid: acb83c31b1277a947b368702d47d9625, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -59
+      objectReference: {fileID: 0}
+    - target: {fileID: 3061826074544816492, guid: acb83c31b1277a947b368702d47d9625, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -35.19995
       objectReference: {fileID: 0}
     - target: {fileID: 4136079162878190518, guid: acb83c31b1277a947b368702d47d9625, type: 3}
       propertyPath: m_Name
@@ -800,6 +1034,10 @@ PrefabInstance:
     - target: {fileID: 5390024999315636417, guid: acb83c31b1277a947b368702d47d9625, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 50.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 5845463168878285922, guid: acb83c31b1277a947b368702d47d9625, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -7.999756
       objectReference: {fileID: 0}
     - target: {fileID: 6475847309719042187, guid: acb83c31b1277a947b368702d47d9625, type: 3}
       propertyPath: m_SizeDelta.x
