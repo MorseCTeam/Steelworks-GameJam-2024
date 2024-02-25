@@ -8,6 +8,7 @@ public class MicrowaveButtonController : MonoBehaviour, IPointerEnterHandler, IP
     private bool _isInside = false;
     private bool _isClicked = false;
     [SerializeField] private UnityEvent ClickAdditionalEvent;
+    [SerializeField] private UnityEvent UnClickAdditionEvent;
     [SerializeField] private Sprite clickedSprite;
     private Image image;
     private Sprite unClickedSprite;
@@ -57,8 +58,19 @@ public class MicrowaveButtonController : MonoBehaviour, IPointerEnterHandler, IP
     public void TryToUnclick()
     {
         if (!_isClicked) return;
-
+        
+        UnClickAdditionEvent?.Invoke();
         image.sprite = unClickedSprite;
         _isClicked = false;
+    }
+
+    public void DragDownObject(Transform objectToDrag)
+    {
+        objectToDrag.transform.position -= Vector3.up * 10f;
+    }
+
+    public void DragUpObject(Transform objectToDrag)
+    {
+        objectToDrag.transform.position += Vector3.up * 10f;
     }
 }
