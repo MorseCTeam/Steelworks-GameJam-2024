@@ -20,10 +20,13 @@ public class RobotController : MonoBehaviour
     private ScreenSpaceController _screenSpaceController;
     private BugsManager _bugsManager;
     private Rigidbody2D _rigidbody;
+    private Animator _animator;
     private int testingTilesAmount;
     private bool _isDead;
     private void Awake()
     {
+        _animator = GetComponent<Animator>();
+        _animator.SetInteger("Direction",(int)CurrentDirection);
         _buttonsAdapter = FindObjectOfType<ButtonsToRobotAdapterController>();
         _screenSpaceController = FindObjectOfType<ScreenSpaceController>();
         _buttonsAdapter.OnMovePerformed += Move;
@@ -84,9 +87,11 @@ public class RobotController : MonoBehaviour
     public IEnumerator MovementCoroutine(int amountOfTiles)
     {
         _rigidbody.velocity = DirectionToVector(CurrentDirection) / oneTileMovementLength;
-        
+        _animator.SetBool("Walk", true);
         yield return new WaitForSeconds(amountOfTiles * oneTileMovementLength);
         _rigidbody.velocity = Vector2.zero;
+        _animator.SetBool("Walk", false);
+
         SnapBackToGrid();
         IsBusy = false;
         _bugsManager.MoveBugs();
@@ -98,9 +103,13 @@ public class RobotController : MonoBehaviour
         if(_screenSpaceController.CurrentScreenSpace != ScreenSpace.Camera) return;
 
         IsBusy = true;
-
         _batteryLife -= 10f;
         CurrentDirection = direction;
+
+        
+        _animator.SetInteger("Direction",(int)CurrentDirection);
+        if (CurrentDirection == Direction.Left) GetComponent<SpriteRenderer>().flipX = true;
+        else GetComponent<SpriteRenderer>().flipX = false;
 
         IsBusy = false;
         _bugsManager.MoveBugs();
