@@ -20,7 +20,8 @@ public class BugController : MonoBehaviour
     {
         bugNextTileIndicator.gameObject.SetActive(false);
         transform.DOMove(transform.position + (Vector3)(NextMovementDirection), 0.5f)
-            .OnComplete(() => { SetIndicatorAndFindPosition(); });
+            .OnComplete(() => { SetIndicatorAndFindPosition(); })
+            .SetEase(Ease.Linear);
 
     }
 

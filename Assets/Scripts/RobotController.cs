@@ -9,10 +9,17 @@ public class RobotController : MonoBehaviour
 
     [SerializeField] private float oneTileMovementLength = 0.15f;
 
+    private ButtonsToRobotAdapterController _buttonsAdapter;
     private BugsManager _bugsManager;
     private Rigidbody2D _rigidbody;
     private int testingTilesAmount;
 
+    private void Awake()
+    {
+        _buttonsAdapter = FindObjectOfType<ButtonsToRobotAdapterController>();
+        _buttonsAdapter.OnMovePerformed += Move;
+        _buttonsAdapter.OnTurnPerformed += direction => Rotate((Direction)direction);
+    }
     private void Start()
     {
         _bugsManager = FindObjectOfType<BugsManager>();
@@ -21,21 +28,16 @@ public class RobotController : MonoBehaviour
 
     private void Update()
     {
-        //Testing purposes only
-        if (Input.GetKeyDown(KeyCode.P)) testingTilesAmount++;
-        if (Input.GetKeyDown(KeyCode.Space)) Move(testingTilesAmount);
-        if (Input.GetKeyDown(KeyCode.DownArrow)) Rotate(Direction.Down);
-        if (Input.GetKeyDown(KeyCode.UpArrow)) Rotate(Direction.Up);
-        if (Input.GetKeyDown(KeyCode.LeftArrow)) Rotate(Direction.Left);
-        if (Input.GetKeyDown(KeyCode.RightArrow)) Rotate(Direction.Right);
     }
 
-    public void Move(int amountOfTiles)
+    private void Move(int amountOfTiles)
     {
+        Debug.Log("1");
         if (IsBusy) return;
         if (_bugsManager.AreBugsMoving) return;
+        Debug.Log("2");
 
-
+        
         IsBusy = true;
         SnapBackToGrid();
         StartCoroutine(MovementCoroutine(amountOfTiles));
@@ -51,7 +53,6 @@ public class RobotController : MonoBehaviour
         IsBusy = false;
         _bugsManager.MoveBugs();
     }
-
     public void Rotate(Direction direction)
     {
         if (IsBusy) return;
@@ -97,7 +98,8 @@ public class RobotController : MonoBehaviour
 }
 
 public enum Direction
-{
+{   
+    None,
     Up,
     Down,
     Left,
