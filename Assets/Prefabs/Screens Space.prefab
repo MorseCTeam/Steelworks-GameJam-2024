@@ -220,6 +220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 386764066281612283}
   - component: {fileID: 1545915374755935128}
+  - component: {fileID: 1219331224693706293}
   m_Layer: 5
   m_Name: Email Screen Space
   m_TagString: Untagged
@@ -260,28 +261,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emailDisplay: {fileID: 4373102431540448585}
-  EmailTest:
+--- !u!114 &1219331224693706293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2585414155625628873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3ea62f2a8d0ac74c9666c9c8d10bc3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingEmail:
     <StartEmailAction>k__BackingField:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2344968440962321602}
-          m_TargetAssemblyTypeName: ScreenSpaceController, Assembly-CSharp
-          m_MethodName: OpenEmail
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     <EndEmailAction>k__BackingField:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2344968440962321602}
-          m_TargetAssemblyTypeName: ScreenSpaceController, Assembly-CSharp
-          m_MethodName: OpenLibraryCameraScreen
+        - m_Target: {fileID: 1219331224693706293}
+          m_TargetAssemblyTypeName: EmailSender, Assembly-CSharp
+          m_MethodName: SendInstructionEmail
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -299,10 +300,29 @@ MonoBehaviour:
       go\u015B\u0107mi. W zwi\u0105zku z niedawnym, zupe\u0142nie niepowi\u0105zanym
       z Pa\u0144skim zatrudnieniem incydentem, prac\u0119 b\u0119dzie Pan wykonywa\u0142
       w trybie hybrydowym. Za pomoc\u0105 zdalnie sterowanego robota z w\u0142asnego
-      biura! Wi\u0119cej informacji w nast\u0119pnym mailu!\r\n\r\n\u017Byczymy powodzenia,\r\nzarz\u0105d
+      biura! Wi\u0119cej informacji w nast\u0119pnym mailu!\r\n\r\n\u017Byczymy powodzenia\r\nzarz\u0105d
       O.B.G. AGH"
     <LetterLength>k__BackingField: 0.05
-    <EndWait>k__BackingField: 2
+    <EndWait>k__BackingField: 2.5
+  instructionEmail:
+    <StartEmailAction>k__BackingField:
+      m_PersistentCalls:
+        m_Calls: []
+    <EndEmailAction>k__BackingField:
+      m_PersistentCalls:
+        m_Calls: []
+    <EmailText>k__BackingField: "<size=150%>INSTRUKCJA OBS\u0141UGI ROBOTA</size>\r\n\r\nRobot
+      posiada 3 mo\u017Cliwe tryby. Tryb MOVE uruchamia konsol\u0119 numeryczn\u0105
+      i pozwala na wyb\xF3r ilo\u015Bci p\xF3l do przej\u015Bcia. Tryb ROTATE uruchamia
+      konsol\u0119 kierunkow\u0105 i pozwala na wyb\xF3r kierunku robota. Tryb ATTACK
+      sprawia, \u017Ce robot parali\u017Cuje pr\u0105dem obszar znajduj\u0105cy si\u0119
+      na metr przed nim. Robot zasilany jest moto-pomop\u0105 bombow\u0105 i do prawid\u0142owego
+      dzia\u0142ania potrzebuje odpowiedniej ilo\u015Bci pr\u0105du. Baterie robota
+      mo\u017Cna \u0142adowa\u0107 za pomoc\u0105 korby znajduj\u0105cej si\u0119
+      przy stanowisku operatora\r\n\r\nAby zamkn\u0105\u0107 instrukcj\u0119 operator
+      powinien wybra\u0107 opcj\u0119 MOVE oraz wcisn\u0105\u0107 przycisk 9"
+    <LetterLength>k__BackingField: 0.05
+    <EndWait>k__BackingField: 2.5
 --- !u!1 &5612623459242468242
 GameObject:
   m_ObjectHideFlags: 0

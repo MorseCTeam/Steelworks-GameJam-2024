@@ -14,6 +14,8 @@ public class EmailSender : MonoBehaviour
         _emailSystemController = FindObjectOfType<EmailSystemController>();
         StartCoroutine(SendEmailUntilSuccess(startingEmail));
     }
+    
+    
 
     public void SendInstructionEmail()
     {
@@ -27,6 +29,7 @@ public class EmailSender : MonoBehaviour
         {
             yield return null;
         }
+        
     }
 
 }

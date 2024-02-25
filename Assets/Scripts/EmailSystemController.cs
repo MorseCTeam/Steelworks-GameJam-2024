@@ -14,9 +14,13 @@ public class EmailSystemController : MonoBehaviour
     private EmailData _currentEmail = null;
     private AudioController audioController;
 
-    private void Start()
+    private void Awake()
     {
         audioController = FindObjectOfType<AudioController>();
+    }
+
+    private void Start()
+    {
         audioController?.Play(SoundType.ComputerStartup);
         audioController?.Play(SoundType.ComputerBuzz, loop: true);
     }
@@ -32,6 +36,7 @@ public class EmailSystemController : MonoBehaviour
 
     private IEnumerator DisplayCurrentEmail()
     {
+        if(audioController == null) audioController = FindObjectOfType<AudioController>();
         _currentEmail.StartEmailAction.Invoke();
         emailDisplay.text = "";
         string tag = "<color=#00000000>";
