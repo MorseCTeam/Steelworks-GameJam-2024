@@ -19,10 +19,13 @@ public class EmailSystemController : MonoBehaviour
         audioController = FindObjectOfType<AudioController>();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space)) _currentEmail.LetterLength = 0;
+    }
+
     private void Start()
     {
-        audioController?.Play(SoundType.ComputerStartup);
-        audioController?.Play(SoundType.ComputerBuzz, loop: true);
     }
 
     public bool TryToDisplayEmail(EmailData emailData)
@@ -68,8 +71,11 @@ public class EmailSystemController : MonoBehaviour
                 continue;
             }
             if(Char.IsLetterOrDigit(_currentEmail.EmailText[i-1])) audioController.Play(SoundType.KeyBoardBeep,volume:0.1f);
-            
-            yield return new WaitForSeconds(_currentEmail.LetterLength);
+
+            if (_currentEmail.LetterLength > 0)
+            {
+                yield return new WaitForSeconds(_currentEmail.LetterLength);
+            }
         }
         emailDisplay.text = _currentEmail.EmailText;
 

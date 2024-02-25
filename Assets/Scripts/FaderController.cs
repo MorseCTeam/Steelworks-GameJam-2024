@@ -11,10 +11,9 @@ public class FaderController : MonoBehaviour
     private void Start()
     {
         StartCoroutine(Fade(FadeType.FadeIn));
-        
     }
 
-    IEnumerator Fade(FadeType type, float length = 1f, Action OnEndAction = null)
+    public IEnumerator Fade(FadeType type, float length = 1f, Action OnEndAction = null)
     {
         float alphaValue = type == FadeType.FadeIn ? 1 : 0;
         float direction = type == FadeType.FadeIn ? -1 : 1;

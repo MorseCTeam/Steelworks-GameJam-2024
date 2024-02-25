@@ -9,11 +9,13 @@ public class ScreenSpaceController : MonoBehaviour
     [SerializeField] private GameObject EmailScreen;
     [SerializeField] private GameObject LibraryCameraScreen;
     [SerializeField] private GameObject ShutDownScreen;
+    [SerializeField] private GameObject TurnedOffScreen;
     public void OpenEmail()
     {
         EmailScreen.SetActive(true);
         LibraryCameraScreen.SetActive(false);
         ShutDownScreen.SetActive(false);
+        TurnedOffScreen.SetActive(false);
         CurrentScreenSpace = ScreenSpace.Email;
     }
 
@@ -22,6 +24,7 @@ public class ScreenSpaceController : MonoBehaviour
         EmailScreen.SetActive(false);
         LibraryCameraScreen.SetActive(true);
         ShutDownScreen.SetActive(false);
+        TurnedOffScreen.SetActive(false);
         CurrentScreenSpace = ScreenSpace.Camera;
     }
 
@@ -30,7 +33,17 @@ public class ScreenSpaceController : MonoBehaviour
         EmailScreen.SetActive(false);
         LibraryCameraScreen.SetActive(false);
         ShutDownScreen.SetActive(true);
+        TurnedOffScreen.SetActive(false);
         CurrentScreenSpace = ScreenSpace.ShutDown;
+    }
+
+    public void TurnOff()
+    {
+        EmailScreen.SetActive(false);
+        LibraryCameraScreen.SetActive(false);
+        ShutDownScreen.SetActive(false);
+        TurnedOffScreen.SetActive(true);
+        CurrentScreenSpace = ScreenSpace.None;
     }
 }
 

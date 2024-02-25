@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EmailSender : MonoBehaviour
@@ -12,10 +11,13 @@ public class EmailSender : MonoBehaviour
     private void Start()
     {
         _emailSystemController = FindObjectOfType<EmailSystemController>();
+        
+    }
+
+    public void PerformStartingEmail()
+    {
         StartCoroutine(SendEmailUntilSuccess(startingEmail));
     }
-    
-    
 
     public void SendInstructionEmail()
     {
@@ -29,7 +31,23 @@ public class EmailSender : MonoBehaviour
         {
             yield return null;
         }
+
         
     }
 
+    public void WaitForInstructionPerform()
+    {
+        FindObjectOfType<ButtonsToRobotAdapterController>().OnMovePerformed
+            += InstructionPerformanceListener;
+    }
+
+    private void InstructionPerformanceListener(int amount)
+    {
+        if (amount != 9) return;
+        
+            FindObjectOfType<ButtonsToRobotAdapterController>().OnMovePerformed
+                -= InstructionPerformanceListener;
+            FindObjectOfType<ScreenSpaceController>().OpenLibraryCameraScreen();
+        
+    }
 }
